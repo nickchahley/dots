@@ -7,7 +7,19 @@ include ~/.config/sway/config.d/workspaces.config
 include ~/.config/sway/themes/everforest/config
 output * bg ~/pictures/wallpapers/everforest/flowers.png fill
 
+
 bindsym $mod+$two+l exec swaynag -t warning -m 'Exit sway? (ends Wayland session)' -B 'Yes, exit sway' 'swaymsg exit'
+
+# Idle config
+set $lock swaylock -f -c 000000 --indicator-radius 170 --indicator-thickness 30 
+
+# Turn off displays after idle (seconds)
+# Lock screen after idle (seconds)
+# Lock screen before sleep
+exec swayidle -w \
+  timeout 3600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+  timeout 10000 '$lock' \
+  before-sleep '$lock'
 
 # Start <X> (and restart on sway config reload)
 exec_always ~/.config/kanshi/kanshi.sh
@@ -23,8 +35,8 @@ font pango:MesloLGS NF $fontsize
 
 # Marks
 # https://github.com/ilya-zlobintsev/sway-marker
-bindsym --to-code $mod+m exec sway-marker mark
-bindsym --to-code $mod+apostrophe exec sway-marker goto
+# bindsym --to-code $mod+m exec sway-marker mark
+# bindsym --to-code $mod+apostrophe exec sway-marker goto
 
 # fast switch b/t prev app
 # exec --no-startup-id ~/.config/sway/scripts/sway-track-prev-focus
