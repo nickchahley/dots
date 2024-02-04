@@ -1,0 +1,11 @@
+#!/bin/bash
+# TODO: want to be able to choose b/t a couple of pre-defined position layouts,
+# maybe we intellegently look for the second monitors (in future) or we just
+# guess, and set all possible values to the same
+
+laptop="eDP-1"
+hdmi="HDMI-A-1"
+dp="DP-1"
+
+# second monitor above laptop
+swaymsg output "$laptop" pos 0 1200 && swaymsg output "$hdmi" pos 0 0

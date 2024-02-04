@@ -1,0 +1,38 @@
+# in default sway config include config-vars.d after variables, before anything else 
+include /etc/sway/config-vars.d/*
+
+include ~/.config/sway/config.d/libinput.config
+include ~/.config/sway/config.d/i3-compatible.config
+include ~/.config/sway/config.d/workspaces.config
+include ~/.config/sway/themes/everforest/config
+output * bg ~/pictures/wallpapers/everforest/flowers.png fill
+
+bindsym $mod+$two+l exec swaynag -t warning -m 'Exit sway? (ends Wayland session)' -B 'Yes, exit sway' 'swaymsg exit'
+
+# Start <X> (and restart on sway config reload)
+exec_always ~/.config/kanshi/kanshi.sh
+exec_always ~/.config/gammastep/gammastep.sh
+
+# Enable laptop lid switch
+bindswitch --reload --locked lid:on output eDP-1 disable
+bindswitch --reload --locked lid:off output eDP-1 enable
+
+# putting var here in hopes of binding changes using sed
+set $fontsize 6
+font pango:MesloLGS NF $fontsize
+
+# Marks
+# https://github.com/ilya-zlobintsev/sway-marker
+bindsym --to-code $mod+m exec sway-marker mark
+bindsym --to-code $mod+apostrophe exec sway-marker goto
+
+# fast switch b/t prev app
+# exec --no-startup-id ~/.config/sway/scripts/sway-track-prev-focus
+# bindsym $mod+grave [con_mark=_prev] focus
+
+# necessary to allow other users (ex. root) to run programs in session
+exec xhost + local:
+
+# this is the last command of default sway config
+include /etc/sway/config.d/*
+# vim: set ft=i3config:

@@ -1,0 +1,8 @@
+set $fontsize 12
+font pango:MesloLGS NF $fontsize
+
+# should not change these
+fontsize 10
+font size
+
+set $resize 10

@@ -1,0 +1,5 @@
+#!/bin/bash
+size=$1
+file=${2:-$HOME/.config/sway/config}
+sed -r -i 's/^(set \$fontsize) [0-9]+/\1 '"$size"'/g' $file
+swaymsg reload

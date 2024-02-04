@@ -1,0 +1,51 @@
+# Define colors
+set $green #a7c080
+set $red #e67e80
+set $yellow #ddbc7f
+
+# Define palette
+set $bg  #272e33
+set $bg0 #292d2e
+set $bg1 #333c43
+set $bg2 #414b50
+set $fg #d3c6aa
+set $bgbar #323232
+set $hi0 $green
+set $alert $red
+
+# {{{ Bar 
+bar {
+    position top
+    status_command while ~/.config/sway/scripts/status.sh; do sleep 1; done
+
+    colors {
+        statusline $fg 
+        background "$bgbar"F2
+				# workspace          #bord.  #bg     #text
+				focused_workspace    $hi0 $hi0 $bg0 
+				inactive_workspace   $bgbar $bgbar $hi0 
+				urgent_workspace     $bg $bg $alert
+    }
+		# font here is scoped to the bar
+		font pango:MesloLGS NF 10
+}
+#}}}
+
+# {{{ Window colors 
+# transparent unforcused borders looks nice only if gaps
+# and also need to address stacking
+# hex values from 100 to 0 % alpha https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
+# 95 F2
+# 80 CC
+# 75 BF
+
+# class                 border  backgr. text    indica. child_border
+client.focused          #292d2e $hi0 #333c43 $alert $hi0 
+client.focused_inactive "$hi0"BF #333c43F2 $fg #484e50 #333c43 
+client.unfocused        #292d2eF2 #414b50F2 $fg #292d2e00 #333c43F2
+
+client.urgent           #2f343a #e67e80 #ffffff #e67e80 #e67e80
+client.placeholder      #000000 #0c0c0c #ffffff #000000 #0c0c0c
+client.background       #ffffff
+
+# }}}

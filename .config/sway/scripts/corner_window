@@ -1,0 +1,61 @@
+#!/bin/bash
+# vim: syntax=sh
+
+if [ "$1" = "debug" ];then
+	echo TODO Try to speed it up...
+	echo Maybe the jq parsing could be made better to speed up the parsing...
+	set -x
+else
+	exec 1>/dev/null 2>&1
+fi
+
+sway_outputs=$(swaymsg -t get_outputs)
+
+output=$(echo $sway_outputs | jq ' .. | select(.focused?).name')
+eval $(echo $sway_outputs | jq -r "
+	map(select(.name==$output))[].rect 
+	| \"output_width=\(.width);output_height=\(.height)\""
+)
+
+json_ctx=""
+
+json_ctx=$(swaymsg -t get_tree | jq ".nodes \
+| map(select(.name==$output))[] \
+| recurse(.nodes[];.nodes) \
+| select(.focused)")
+
+floating=$([ -n "$json_ctx" ] && echo false || echo true)
+
+echo "json_ctx for window: " $json_ctx
+echo Floating state: $floating
+
+swaymsg fullscreen disable
+if ! $floating ;then
+	echo Entering cornered mode
+	# prep
+	swaymsg floating enable,border pixel 2px,sticky enable,resize set 750px 422px
+
+	# realignement
+	eval $(swaymsg -t get_tree | jq --raw-output ".nodes \
+		| map(select(.name==$output))[] \
+		| recurse(.floating_nodes[],.nodes[];.nodes)
+		| select(.focused).window_rect 
+		| \"width=\(.width);height=\(.height);\""
+	)
+	if [ -n "$width" ] || [ -n "$height" ];then
+		x=$((output_width-width))
+		y=$((output_height-height-39))
+		swaymsg move position $x $y
+		echo "Output size: ${output_width}x$output_height"
+		echo "Window size: (${x}x$y) [${width}x$height]"
+	else 
+		echo "The window lost focuse before it could be moved"
+		exit
+	fi
+else
+	echo Quitting cornered mode
+	swaymsg sticky disable,floating disable
+fi
+
+
+
