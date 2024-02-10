@@ -1,0 +1,11 @@
+#!/bin/bash
+# extract nth last git hash
+
+if [[ ($# == 0 ) || ( $@ == "--help" ) || ( $@ == "-h" ) ]]
+then
+	echo "Usage: $0 <N>"
+	echo "Return N-th last git commit hash"
+	exit 1
+fi
+hash="$(git log -1 --oneline | sed 's/ .*$//')"
+echo "$hash"
