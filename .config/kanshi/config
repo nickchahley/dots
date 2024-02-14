@@ -3,8 +3,9 @@
 # rotate displays with: output "$dz" rotate 90
 
 profile work-one {
+	# DP-1 'Acer Technologies ED320QR S TJNAA0033W01
 	output "eDP-1" position 0,0
-	output "DP-1" position 1920,0
+	output "Acer Technologies ED320QR S TJNAA0033W01" position 1920,0 res 1920x1080
 
 	exec swaymsg workspace 1 output "eDP-1"
 	exec swaymsg workspace 2 output "eDP-1"
@@ -17,6 +18,8 @@ profile work-one {
 	exec swaymsg workspace 8 output  "DP-1"
 	exec swaymsg workspace 9 output  "DP-1"
 	exec swaymsg workspace 10 output "DP-1"
+
+	exec swaymsg workspace 6
 }
 
 profile home-one {

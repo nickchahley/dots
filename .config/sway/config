@@ -7,11 +7,11 @@ include ~/.config/sway/config.d/workspaces.config
 include ~/.config/sway/themes/everforest/config
 output * bg ~/pictures/wallpapers/everforest/flowers.png fill
 
+# Idle config; note color is hex w/o #
+set $lock swaylock -f -c 272e33 --indicator-radius 170 --indicator-thickness 30
 
-bindsym $mod+$two+l exec swaynag -t warning -m 'Exit sway? (ends Wayland session)' -B 'Yes, exit sway' 'swaymsg exit'
-
-# Idle config
-set $lock swaylock -f -c 000000 --indicator-radius 170 --indicator-thickness 30 
+# lock sceen immediately (once we are able to auto login tty1 w/ agetty)
+# exec $lock
 
 # Turn off displays after idle (seconds)
 # Lock screen after idle (seconds)
@@ -46,5 +46,5 @@ font pango:MesloLGS NF $fontsize
 exec xhost + local:
 
 # this is the last command of default sway config
-include /etc/sway/config.d/*
+include /etc/sway/config.d*
 # vim: set ft=i3config:
