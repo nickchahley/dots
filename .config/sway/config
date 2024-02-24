@@ -24,10 +24,21 @@ exec swayidle -w \
 # Start <X> (and restart on sway config reload)
 exec_always ~/.config/kanshi/kanshi.sh
 exec_always ~/.config/gammastep/gammastep.sh
+# exec_always ~/.config/mako/mako.sh
+exec mako
+
+
+# necessary to allow other users (ex. root) to run programs in session
+exec xhost + local:
+
+# fix: gtk apps take 20 seconds to start
+# https://github.com/swaywm/sway/wiki#gtk-applications-take-20-seconds-to-start
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 # Enable laptop lid switch
 bindswitch --reload --locked lid:on output eDP-1 disable
 bindswitch --reload --locked lid:off output eDP-1 enable
+
 
 # putting var here in hopes of binding changes using sed
 set $fontsize 6
@@ -42,8 +53,6 @@ font pango:MesloLGS NF $fontsize
 # exec --no-startup-id ~/.config/sway/scripts/sway-track-prev-focus
 # bindsym $mod+grave [con_mark=_prev] focus
 
-# necessary to allow other users (ex. root) to run programs in session
-exec xhost + local:
 
 # this is the last command of default sway config
 include /etc/sway/config.d*
