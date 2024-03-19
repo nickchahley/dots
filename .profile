@@ -1,11 +1,16 @@
+echo "sourcing .profile!"
+export PROFILE_SOURCED=1
+
+# start wm
+sway
+
+
 # I remain very confused about all the profile, zprofile, bash_profile stuff.
 # Sometimes variables declared here are/not accessible in my interactive shell,
 # sometimes there is differential access between zsh and a script w/ #!/bin/bash
 # Sourcing profile with .zshrc in compatability mode has not worked for me
 # I just want to be able to have one place to sort out my PATH and still be able
 # to use multiple shells
-#
-# Update 2023-11: env variables here 
 
 export EDITOR=/usr/bin/nvim
 

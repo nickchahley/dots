@@ -1,0 +1,24 @@
+[
+	{
+		"name": "ringo", // supposed to be able to style with this in css, but have not gotten it working
+		"layer": "top",
+		"position": "top",
+		"modules-left": [
+			"sway/workspaces",
+			"sway/mode"
+		],
+		"modules-center": ["sway/window"],
+		"modules-right": [
+			"pulseaudio",
+			"battery",
+			"clock",
+			"tray"
+		],
+		"include": ["~/.config/waybar/default-modules.json"],
+		"sway/window": {
+			"max-length": 50
+		}
+	}
+]
+
+// vim: set ft=jsonc:

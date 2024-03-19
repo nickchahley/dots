@@ -13,23 +13,6 @@ set $bgbar #323232
 set $hi0 $green
 set $alert $red
 
-# {{{ Bar 
-bar {
-    position top
-    status_command while ~/.config/sway/scripts/status.sh; do sleep 1; done
-
-    colors {
-        statusline $fg 
-        background "$bgbar"F2
-				# workspace          #bord.  #bg     #text
-				focused_workspace    $hi0 $hi0 $bg0 
-				inactive_workspace   $bgbar $bgbar $hi0 
-				urgent_workspace     $bg $bg $alert
-    }
-		# font here is scoped to the bar
-		font pango:MesloLGS NF 10
-}
-#}}}
 
 # {{{ Window colors 
 # transparent unforcused borders looks nice only if gaps

@@ -1,0 +1,40 @@
+#!/bin/bash
+#
+# symlink file to ~/.local/bin, trim ext from linkname if present
+# 
+# for ref
+# filename="${$src##*/}"
+# extension="${filename##*.}"
+#
+# TODO: 
+# 	allow overwrite if exists
+# 	read link source if exists
+
+src=$(realpath "$1")
+filename=$(basename "$1")
+linkname="${filename%.*}"
+target="$HOME/.local/bin/$linkname"
+
+# "\033[<ANSI_escape_code>m",  use with 'echo -e' 
+red="\033[0;31m"
+yellow="\033[1;33m"
+reset="\033[0m"
+
+# NTS: `target` and `[ ]` are the same command
+if test ! -e "$target" && test -L "$target"; then
+	echo -e "${red}Error:${reset} target is a broken symlink ($target)"
+elif [ -e "$target" ]; then
+	if [ -f "$target" ]; then
+		type="regular file"
+	elif [ -d "$target" ]; then
+		type="directory"
+	fi
+	echo -e "${red}Error:${reset} target is a $type ($target)"
+elif [ -e "$target" ] && [ -L "$target" ]; then
+	echo -e "${yellow}Passing:${reset} target exists ($target) and points to:"
+	echo "$(readlink $target)"
+else
+	ln -s "$src" "$target" && \
+		echo "Created link $target pointing to $src"
+fi
+

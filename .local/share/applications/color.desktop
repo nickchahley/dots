@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=color
+Terminal=true
+Exec=~/.local/bin/screenshot p

@@ -21,7 +21,8 @@ sink_vol() {
 		sed -e 's,.* \([0-9][0-9]*\)%.*,\1,' )
 }
 sink_is_mute() {
-	echo $( pactl list sinks | grep '^[[:space:]]Mute: ' | \
+	echo $( pactl list sinks | \
+		grep '^[[:space:]]Mute: ' | \
 		head -n $(( $1 + 1 )) | tail -n 1 )
 }
 pa_vol_string() {
@@ -34,20 +35,62 @@ pa_vol_string() {
 
 	name=$( pactl list sinks | grep '^[[:space:]]Name: ' | \
 		head -n $(( $SINK + 1 )) | tail -n 1 )
-	if [[ "$name" == *"blue"* ]] ; then
+	if [[ "$name" == *"blue"* ]]; then
 		bluetooth_extra="$description "
 	fi
 
 	mute=$( sink_is_mute )
-	if [[ "$mute" == *"yes"* ]] ; then
+	if [[ "$mute" == *"yes"* ]]; then
 		icon="🔇 "
-	elif [[ "$mute" == *"no"* ]] ; then 
+	elif [[ "$mute" == *"no"* ]]; then 
 		icon="LOUD "
 	fi
 
 	vol_string="$bluetooth_extra$icon$VOLUME%"
 	echo "$vol_string"
 }
+
+# Rewriting audio volume module
+# get default pulseaudio sink (ex bluez_.., alsa_..)
+pa_sink2() {
+	echo $( pacmd list-sinks | awk '/\*/ {getline; print $2}' | sed 's/[<>]//g' )
+}
+# WIP for determining bluetooth vs speakers (vs headphones (?))
+# need to trim off 
+pa_sink_name() {
+	DESCRIPTION=$(pactl list sinks | sed -n -e "/\sName: $(pa_sink2)/,/^[\s]]*$/ p" | sed -n "/Description:/ p" | sed s'/Description:\s//')
+	NAME=$(pactl list sinks | sed -n -e "/\sName: $(pa_sink2)/,/^[\s]]*$/ p" | sed -n -e '/Name:/ p' | awk '{print $2}')
+	output=""
+	if [[ "$NAME" == *"blue"* ]] ; then
+		output="$DESRCIPTION"
+	elif [[ "$NAME" == *"analog"* ]] ; then
+		output="$DESRCIPTION"
+	fi
+	echo "$output"
+}
+# return the info for only the sink passed as arg 1 (or active sink)
+pa_sink_vol2(){
+	echo $(pactl list sinks | sed -n -e "/\sName: $(pa_sink2)/,/^[\s]]*$/ p" | sed -n -e "/Volume:/ p" | sed -n -e '/Base/ !p' | awk '{print $5}')
+}
+pa_is_mute_2(){
+	echo $(pactl list sinks | sed -n -e "/\sName: $(pa_sink2)/,/^[\s]]*$/ p" | sed -n -e "/Mute:/ p" | awk '{print $2}' )
+}
+pa_mute_icon(){
+	STATUS=$(pa_is_mute_2)
+	if test "$STATUS" = "yes" ; then
+		icon="🔇 "
+	elif test "$STATUS" = "no" ; then
+		icon="LOUD "
+	else
+		icon=" "
+	fi
+	echo $icon
+}
+
+pa_vol_string2() {
+	echo $(pa_sink_name) $(pa_mute_icon) $(pa_sink_vol2)
+}
+
 
 # if grep -q "blue" <<< "$name" ; then
 # if grep -q "yes" <<< "$mute" ; then
@@ -114,4 +157,4 @@ else
    network_active="⇆"
 fi
 
-echo " $network_active $ping ms | $( pa_vol_string ) |$battery_status $battery_icon $battery_percent | $date_formatted "
+echo " $network_active $ping ms | $( pa_vol_string2 ) |$battery_status $battery_icon $battery_percent | $date_formatted "

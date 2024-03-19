@@ -1,0 +1,28 @@
+// shared (across bars) module settings to be imported with "include"["path/to",]
+{
+	"clock": {
+		// "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>", // makes error
+		"format": "{:%a %d-%b-%Y %Hh%M}",
+		"format-alt": "{:%a %Y-%b-%d %Hh%M}",
+	},
+	"battery": {
+		"format": "{capacity}% {icon}",
+		"format-icons": ["", "", "", "", ""],
+	},
+	"sway/workspaces": {
+		"disable-scroll": true,
+	},
+	"pulseaudio": {
+		"format": "{volume}% {icon}",
+		"format-bluetooth": "{volume}% ",
+		"format-muted": "🔇",
+		"format-icons": {
+			"headphone": "",
+			"default": ["", ""]
+		},
+		"scroll-step": 1,
+		"on-click": "pavucontrol",
+		"ignored-sinks": ["Easy Effects Sink"]
+	}
+}
+// vim: set ft=jsonc:

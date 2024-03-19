@@ -2,11 +2,11 @@
 
 # copy the hash of the previous commit to system clipboard
 # alias gitlastci='git rev-parse --short HEAD | xclip -selection clipboard; echo SHA of last commit copied to clipboard'
-alias giteditlastci='git rebase -i $(git rev-parse HEAD)'
+alias git-ammendci='git rebase -i $(git rev-parse HEAD)'
 
 # Populate commit message with those of orphaned commits (ex. when squashing
 # after a soft resest)
-alias gitcs='git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"'
+alias git-sci='git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"'
 
 		# is_installed () {
 		# 	dpkg -s "$@" | grep Status
@@ -180,7 +180,6 @@ alias videoapaters="lspci -k | grep -EA3 'VGA|3D|Display'"
 alias swaywindows='swaymsg -t get_tree | less'
 alias swayouts='swaymsg -t get_outputs'
 
-# alias ls='exa'
 # Apply the bash default aliases for ls and grep 
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
@@ -210,7 +209,6 @@ alias diary='nvim +VimwikiMakeDiaryNote +cd\ %:p:h'
 alias whichgtk='gsettings get org.gnome.desktop.interface gtk-theme'
 alias ggdi='gsettings get org.gnome.desktop.interface'
 alias gsdi='gsettings set org.gnome.desktop.interface'
-alias color='hyprpicker -a'
 alias update_starship='curl -sS https://starship.rs/install.sh | sh'
 alias disable_conda_prompt_modifier='conda config --set changeps1 False'
 alias pw='bw get password'
@@ -239,4 +237,12 @@ alias fil='nautilus .'
 alias sm='swaymsg'
 alias keyvar='swaymsg input type:keyboard xkb_variant'
 alias ya='yadm'
+alias fman='compgen -c | fzf | xargs man'
+alias ts='tomatoshell'
+
+# writing docs and wanting to quickly take and name screenshots
+alias ga='grimshot --notify save area'
+alias gw='grimshot --notify save window'
+
+alias ftl='/home/nikoli/.steam/debian-installation/steamapps/common/FTL Faster Than Light/FTL'
 # vim: ft=bash: ts=2: sw=2: set nowrap:

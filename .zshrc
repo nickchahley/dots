@@ -15,6 +15,11 @@ if ! $P10K; then
 	eval "$(starship init zsh)"
 fi
 
+# Make terminal feel like home
+if [ "$(command -v fortune)" ]; then
+    fortune $HOME/.config/fortunes/nikoli
+    alias fortune='fortune $HOME/.config/fortunes/nikoli'
+fi
 
 ## open new terminals in the last working dir
 function cd
@@ -22,15 +27,6 @@ function cd
     builtin cd "$@"
     pwd > ~/.lastdir
 }
-# if [ -f ~/.lastdir ]; then
-#     cd "$(cat ~/.lastdir)"
-# fi
-
-# Make terminal feel like home
-if [ "$(command -v fortune)" ]; then
-    fortune $HOME/.config/fortunes/nikoli
-    alias fortune='fortune $HOME/.config/fortunes/nikoli'
-fi
 
 # START PLUGINS ----
 
@@ -223,3 +219,9 @@ export FPATH="$REPOS/eza/completions/zsh:$FPATH"
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/nikoli/.local/repos/gsutil/google-cloud-sdk/path.zsh.inc' ]; then . '/home/nikoli/.local/repos/gsutil/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/nikoli/.local/repos/gsutil/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/nikoli/.local/repos/gsutil/google-cloud-sdk/completion.zsh.inc'; fi

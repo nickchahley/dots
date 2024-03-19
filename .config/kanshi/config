@@ -1,6 +1,5 @@
 # A profile will be enabled if all listed outputs are connected
 # swaymsg -t get_outputs -p | grep Output
-# rotate displays with: output "$dz" rotate 90
 
 profile work-one {
 	# DP-1 'Acer Technologies ED320QR S TJNAA0033W01
@@ -22,7 +21,7 @@ profile work-one {
 	exec swaymsg workspace 6
 }
 
-profile home-one {
+profile home-hdmi {
 	output "eDP-1" position 0,1200
 	output "HDMI-A-1" position 0,0
 
@@ -39,15 +38,9 @@ profile home-one {
 	exec swaymsg workspace 10 output "HDMI-A-1"
 }
 
-profile solo {
-	output "eDP-1" enable
-}
-
-# daisy-chained DP monitors via usb-c adapter
-profile home-two {
+profile home-dp5 {
 	output "eDP-1" position 0,1200
-  output "DP-5"  position 0,0
-  output "DP-7"  position 1920,0
+	output "DP-5" position 0,0
 
 	exec swaymsg workspace 1 output "eDP-1"
 	exec swaymsg workspace 2 output "eDP-1"
@@ -60,18 +53,12 @@ profile home-two {
 	exec swaymsg workspace 8 output  "DP-5"
 	exec swaymsg workspace 9 output  "DP-5"
 	exec swaymsg workspace 10 output "DP-5"
-
-	exec swaymsg workspace 11 output "DP-7"
-	exec swaymsg workspace 12 output "DP-7"
-	exec swaymsg workspace 13 output "DP-7"
-	exec swaymsg workspace 14 output "DP-7"
-	exec swaymsg workspace 15 output "DP-7"
 }
 
 profile home-three {
 	output "eDP-1" position 0,1200
-  output "DP-5 'Dell Inc. DELL U2415 CFV9N6B21Y5S"  position 0,0
-  output "DP-7 'Dell Inc. DELL U2415 CFV9N8A629UL"  position 1920,0 transform 90
+  output "Dell Inc. DELL U2415 CFV9N6B21Y5S"  position 0,0
+  output "Dell Inc. DELL U2415 CFV9N8A629UL"  position 1920,0 transform 270
 
 	exec swaymsg workspace 1 output "eDP-1"
 	exec swaymsg workspace 2 output "eDP-1"
@@ -79,15 +66,16 @@ profile home-three {
 	exec swaymsg workspace 4 output "eDP-1"
 	exec swaymsg workspace 5 output "eDP-1"
 
-	exec swaymsg workspace 6 output  "DP-5"
-	exec swaymsg workspace 7 output  "DP-5"
-	exec swaymsg workspace 8 output  "DP-5"
-	exec swaymsg workspace 9 output  "DP-5"
-	exec swaymsg workspace 0 output "DP-5"
+	exec swaymsg workspace 6 output  "Dell Inc. DELL U2415 CFV9N6B21Y5S"
+	exec swaymsg workspace 7 output  "Dell Inc. DELL U2415 CFV9N6B21Y5S"
+	exec swaymsg workspace 8 output  "Dell Inc. DELL U2415 CFV9N6B21Y5S"
+	exec swaymsg workspace 9 output  "Dell Inc. DELL U2415 CFV9N6B21Y5S"
+	exec swaymsg workspace 10 output  "Dell Inc. DELL U2415 CFV9N6B21Y5S"
 
-	exec swaymsg workspace 11 output "DP-7"
-	exec swaymsg workspace 12 output "DP-7"
-	exec swaymsg workspace 13 output "DP-7"
-	exec swaymsg workspace 14 output "DP-7"
-	exec swaymsg workspace 15 output "DP-7"
+	exec swaymsg workspace 11 output "Dell Inc. DELL U2415 CFV9N8A629UL"
+	exec swaymsg workspace 12 output "Dell Inc. DELL U2415 CFV9N8A629UL"
+	exec swaymsg workspace 13 output "Dell Inc. DELL U2415 CFV9N8A629UL"
+	exec swaymsg workspace 14 output "Dell Inc. DELL U2415 CFV9N8A629UL"
+	exec swaymsg workspace 15 output "Dell Inc. DELL U2415 CFV9N8A629UL"
 }
+

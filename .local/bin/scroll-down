@@ -1,0 +1,12 @@
+#!/bin/bash
+# Scroll down until killed. For fully loading auto-pagination (?) pages
+
+if [ $XDG_SESSION_TYPE = 'wayland' ]; then
+	cmd="ydotool key End"
+else
+	cmd="xdotool key End"
+fi
+
+while sleep 0.2; do
+	$cmd
+done
