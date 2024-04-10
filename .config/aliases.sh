@@ -178,7 +178,10 @@ alias ctla4string11='ENSP00000303939'
 # https://askubuntu.com/questions/1163390/how-do-i-find-version-of-intel-graphics-card-drivers-installed
 alias videoapaters="lspci -k | grep -EA3 'VGA|3D|Display'"
 alias swaywindows='swaymsg -t get_tree | less'
-alias swayouts='swaymsg -t get_outputs'
+alias smo="swaymsg -t get_outputs | grep | 'Output\|Current\|Position'"
+alias sm='swaymsg'
+alias kr="kanshi-reload && swaymsg -p -t get_outputs | grep 'Output\|Current\|Position'"
+
 
 # Apply the bash default aliases for ls and grep 
 alias dir='dir --color=auto'
@@ -234,7 +237,6 @@ alias acget='curl --cookie ~/.cookies/adventofcode.txt >> input.txt'
 alias lc='libreoffice --calc'
 alias files='nautilus .'
 alias fil='nautilus .'
-alias sm='swaymsg'
 alias keyvar='swaymsg input type:keyboard xkb_variant'
 alias ya='yadm'
 alias fman='compgen -c | fzf | xargs man'

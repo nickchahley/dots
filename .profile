@@ -1,10 +1,6 @@
 echo "sourcing .profile!"
 export PROFILE_SOURCED=1
 
-# start wm
-sway
-
-
 # I remain very confused about all the profile, zprofile, bash_profile stuff.
 # Sometimes variables declared here are/not accessible in my interactive shell,
 # sometimes there is differential access between zsh and a script w/ #!/bin/bash

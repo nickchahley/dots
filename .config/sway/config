@@ -4,6 +4,7 @@ include /etc/sway/config-vars.d/*
 include ~/.config/sway/config.d/libinput.config
 include ~/.config/sway/config.d/i3-compatible.config
 include ~/.config/sway/config.d/workspaces.config
+include ~/.config/sway/config.d/swayr.config
 include ~/.config/sway/themes/everforest/config
 output * bg ~/pictures/wallpapers/everforest/flowers.png fill
 
@@ -44,9 +45,13 @@ set $fontsize 6
 font pango:MesloLGS NF $fontsize
 
 # Marks
+
 # https://github.com/ilya-zlobintsev/sway-marker
-# bindsym --to-code $mod+m exec sway-marker mark
-# bindsym --to-code $mod+apostrophe exec sway-marker goto
+# Can't seem to bind alt+m ?? So use super instead
+# bindsym --to-code $two+m exec ~/.local/bin/sway-marker mark
+# bindsym --to-code $two+g exec ~/.local/bin/sway-marker goto
+bindsym $mod+m exec ~/.local/bin/sway-marker mark
+bindsym $mod+g exec ~/.local/bin/sway-marker goto
 
 # fast switch b/t prev app
 # exec --no-startup-id ~/.config/sway/scripts/sway-track-prev-focus

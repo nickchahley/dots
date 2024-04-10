@@ -156,7 +156,8 @@ alias rgf='rga-fzf'
 #     file="$(rga --max-count=1 --ignore-case --files-with-matches --no-messages "$@" | fzf-tmux +m --preview="rga --ignore-case --pretty --context 10 '"$@"' {}")" && open "$file"
 # }
 
-# Define a custome zle widget to allow editing command in external editor
+# Line Editor
+# Define a custom zle widget to allow editing command in external editor
 EDITOR=nvim
 function edit-command-line-inplace() {
   if [[ $CONTEXT != start ]]; then
@@ -216,12 +217,7 @@ function gg {
 [ -f /usr/bin/zoxide ] && eval "$(zoxide init zsh)"
 export FPATH="$REPOS/eza/completions/zsh:$FPATH"
 
+# Pretty sure I have this for npm >> nvim mason 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/nikoli/.local/repos/gsutil/google-cloud-sdk/path.zsh.inc' ]; then . '/home/nikoli/.local/repos/gsutil/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/nikoli/.local/repos/gsutil/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/nikoli/.local/repos/gsutil/google-cloud-sdk/completion.zsh.inc'; fi

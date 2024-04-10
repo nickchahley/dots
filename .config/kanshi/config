@@ -55,27 +55,34 @@ profile home-dp5 {
 	exec swaymsg workspace 10 output "DP-5"
 }
 
+# Output commands seem to only work if refing connection port, not the display ID
+# Werid: to get mouse to move from display at pos y0 to y1200 I need to move the
+# mouse with a minimum velocity. Not required to move b/t horizontal displays. 
+# Vert offset of 120 (ex. y1200, y120) seems to be the sweet spot for mouse
+# movement without breaking kbd focus navigation (125 breaks it)
 profile home-three {
 	output "eDP-1" position 0,1200
-  output "Dell Inc. DELL U2415 CFV9N6B21Y5S"  position 0,0
-  output "Dell Inc. DELL U2415 CFV9N8A629UL"  position 1920,0 transform 270
+  output "HDMI-A-1"  position 2020,0 transform 180
+  output "DP-1"  position 100,120
+  # output "Dell Inc. DELL U2415 CFV9N8A629UL"  position 1920,0 transform 270
+  # output "Dell Inc. DELL U2415 CFV9N6B21Y5S"  position 0,1000
 
-	exec swaymsg workspace 1 output "eDP-1"
-	exec swaymsg workspace 2 output "eDP-1"
-	exec swaymsg workspace 3 output "eDP-1"
-	exec swaymsg workspace 4 output "eDP-1"
-	exec swaymsg workspace 5 output "eDP-1"
+	exec swaymsg workspace 1 output  "eDP-1"
+	exec swaymsg workspace 2 output  "eDP-1"
+	exec swaymsg workspace 3 output  "eDP-1"
+	exec swaymsg workspace 4 output  "eDP-1"
+	exec swaymsg workspace 5 output  "eDP-1"
 
-	exec swaymsg workspace 6 output  "Dell Inc. DELL U2415 CFV9N6B21Y5S"
-	exec swaymsg workspace 7 output  "Dell Inc. DELL U2415 CFV9N6B21Y5S"
-	exec swaymsg workspace 8 output  "Dell Inc. DELL U2415 CFV9N6B21Y5S"
-	exec swaymsg workspace 9 output  "Dell Inc. DELL U2415 CFV9N6B21Y5S"
-	exec swaymsg workspace 10 output  "Dell Inc. DELL U2415 CFV9N6B21Y5S"
+	exec swaymsg workspace 6 output  "DP-1"
+	exec swaymsg workspace 7 output  "DP-1"
+	exec swaymsg workspace 8 output  "DP-1"
+	exec swaymsg workspace 9 output  "DP-1"
+	exec swaymsg workspace 10 output "DP-1"
 
-	exec swaymsg workspace 11 output "Dell Inc. DELL U2415 CFV9N8A629UL"
-	exec swaymsg workspace 12 output "Dell Inc. DELL U2415 CFV9N8A629UL"
-	exec swaymsg workspace 13 output "Dell Inc. DELL U2415 CFV9N8A629UL"
-	exec swaymsg workspace 14 output "Dell Inc. DELL U2415 CFV9N8A629UL"
-	exec swaymsg workspace 15 output "Dell Inc. DELL U2415 CFV9N8A629UL"
+	exec swaymsg workspace 11 output "HDMI-A-1"
+	exec swaymsg workspace 12 output "HDMI-A-1"
+	exec swaymsg workspace 13 output "HDMI-A-1"
+	exec swaymsg workspace 14 output "HDMI-A-1"
+	exec swaymsg workspace 15 output "HDMI-A-1"
 }
 

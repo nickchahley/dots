@@ -4,10 +4,8 @@ alias alz='vim ~/.config/aliases.sh && raz'
 
 # trying some replacements for default unix tools
 if [ -f "$HOME/.cargo/bin/eza" ]; then
-	alias ls='eza --hyperlink'
+	alias ls='eza'
 	alias tree='eza --tree'
-else
-	alias ls='ls --hyperlink=auto --color=auto'
 fi
 
 # Terminal clipboard utilites {{{
