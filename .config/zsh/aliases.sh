@@ -1,6 +1,7 @@
+ZAL="~/.config/zsh/aliases.sh"
 source $XDG_CONFIG_HOME/aliases.sh
-alias raz='source ~/.config/zsh/aliases.sh'
-alias alz='vim ~/.config/aliases.sh && raz'
+alias ra="source $ZAL"
+alias alz="vim $ZAL && raz"
 
 # trying some replacements for default unix tools
 if [ -f "$HOME/.cargo/bin/eza" ]; then

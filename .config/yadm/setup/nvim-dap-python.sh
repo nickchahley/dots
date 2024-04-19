@@ -2,7 +2,7 @@
 # Manual setup for nvim-dap-python
 
 # might require
-sudo apt install python3-venv
+sudo apt install -y python3-venv
 
 # nvim dap
 D="$(pwd)"
@@ -12,7 +12,7 @@ if ! [[ -d "$VENV" ]]; then
 fi
 cd "$VENV"
 python3 -m venv debugpy
-debugpy/bin/python -m pip install debugpy
+debugpy/bin/python -m pip install -y debugpy
 cd "$D"
 
-pip install pytest
+debugpy/bin/python -m pip install -y pytest
