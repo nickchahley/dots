@@ -1,4 +1,3 @@
-
 # devtools used to install things from git
 # Install devtools from CRAN
 # install.packages("devtools")

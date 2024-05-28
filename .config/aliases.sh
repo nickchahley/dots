@@ -6,20 +6,8 @@ alias git-ammendci='git rebase -i $(git rev-parse HEAD)'
 
 # Populate commit message with those of orphaned commits (ex. when squashing
 # after a soft resest)
+alias git-lastci='git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"'
 alias git-sci='git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"'
-
-		# is_installed () {
-		# 	dpkg -s "$@" | grep Status
-		# }
-		#
-		# is_installed_verbose () {
-		# 	for pkg in "$@"; do
-		# 		s="$(dpkg -s "$@" | grep Status )"
-		# 		echo "$pkg\t$s"
-		# 	done
-		# }
-		# alias doihave='is_installed'
-		# alias doihaves='is_installed_verbose'
 
 # Aliases set using logic are moved to respective shell's aliases file
 # ex. ~/.config/zsh/aliases.sh, ~/.config/fish/aliases.fish
@@ -56,8 +44,16 @@ alias rsync_changes='rsync --info=progress2 --delete -r'
 alias sudoe='sudo -E'
 alias sudoedit='sudo -E nvim'
 alias isudo='sudo -i'
-alias tree='tree -C'
-alias wcl='wc -l'
+alias tt='tree -L2'
+alias tree2='tree -L2'
+alias t2='tree -L2'
+alias tree3='tree -L3'
+alias t3='tree -L3'
+alias tree4='tree -L4'
+alias t4='tree -L4'
+alias treed='tree -d'
+alias hg='history | grep'
+alias svim='sudo -E nvim'
 
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias whatmyip='dig +short myip.opendns.com @resolver1.opendns.com'
@@ -168,6 +164,7 @@ alias whichdisplays='xrandr -q | grep " connected"'
 alias whichscreens='xrandr -q | grep " connected"'
 alias light='brightnessctl set'
 alias howbright='brightnessctl'
+alias dim='brightnessctl set 1'
 alias bedcoding='brightnessctl set 1'
 alias bedtime='brightnessctl set 1'
 
@@ -177,11 +174,11 @@ alias ctla4string11='ENSP00000303939'
 
 # https://askubuntu.com/questions/1163390/how-do-i-find-version-of-intel-graphics-card-drivers-installed
 alias videoapaters="lspci -k | grep -EA3 'VGA|3D|Display'"
-alias swaywindows='swaymsg -t get_tree | less'
-alias smo="swaymsg -t get_outputs | grep | 'Output\|Current\|Position'"
+alias swaywindows='swaymsg -t get_tree | vim'
+alias swayouts="swaymsg -pt get_outputs | grep -e 'Output\|Current\|Position'"
 alias sm='swaymsg'
+alias smo="swayouts"
 alias kr="kanshi-reload && swaymsg -p -t get_outputs | grep 'Output\|Current\|Position'"
-
 
 # Apply the bash default aliases for ls and grep 
 alias dir='dir --color=auto'
@@ -248,4 +245,8 @@ alias ga='grimshot --notify save area'
 alias gw='grimshot --notify save window'
 
 alias ftl='/home/nikoli/.steam/debian-installation/steamapps/common/FTL Faster Than Light/FTL'
+
+alias userdata='cat /home/nikoli/projects/00007-aws-ec2/user-data/nikoli-user-data.yaml | y'
+
+alias dvcl='dvc list --dvc-only -R' 
 # vim: ft=bash: ts=2: sw=2: set nowrap:

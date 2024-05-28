@@ -1,8 +1,8 @@
 # A profile will be enabled if all listed outputs are connected
 # swaymsg -t get_outputs -p | grep Output
+# Use " instead of '
 
 profile work-one {
-	# DP-1 'Acer Technologies ED320QR S TJNAA0033W01
 	output "eDP-1" position 0,0
 	output "Acer Technologies ED320QR S TJNAA0033W01" position 1920,0 mode 1920x1080
 
@@ -21,7 +21,39 @@ profile work-one {
 	exec swaymsg workspace 12 output "DP-1"
 	exec swaymsg workspace 13 output "DP-1"
 
+	exec swaymsg workspace 1
 	exec swaymsg workspace 6
+}
+
+profile work-extra {
+	# When FC is out of the office and I steal his monitor
+	output "DP-3" position 3840,0
+	output "DP-4" position 1920,0
+	output "eDP-1" position 0,0
+	# Using the device names are not working for me atm
+	# DP-4
+	# output "Acer Technologies ED320QR S TJNAA0033W01" position 1920,0 mode 1920x1080
+	# DP-3
+	# output "Lenovo Group Limited L24q-20 U4P06BRV" position 3840,0 mode 2560x1440 
+
+	exec swaymsg workspace 1 output "eDP-1"
+	exec swaymsg workspace 2 output "eDP-1"
+	exec swaymsg workspace 3 output "eDP-1"
+	exec swaymsg workspace 4 output "eDP-1"
+	exec swaymsg workspace 5 output "eDP-1"
+
+	exec swaymsg workspace 6 output  "DP-4"
+	exec swaymsg workspace 7 output  "DP-4"
+	exec swaymsg workspace 8 output  "DP-4"
+	exec swaymsg workspace 9 output  "DP-4"
+	exec swaymsg workspace 10 output "DP-4"
+	exec swaymsg workspace 11 output "DP-4"
+	exec swaymsg workspace 12 output "DP-4"
+	exec swaymsg workspace 13 output "DP-4"
+
+	exec swaymsg workspace 14 output "DP-3"
+	exec swaymsg workspace 15 output "DP-3"
+	exec swaymsg workspace 16 output "DP-3"
 }
 
 profile home-hdmi {

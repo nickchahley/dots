@@ -77,9 +77,6 @@ export ZSHCONFIG=${XDG_CONFIG_HOME:=$HOME/.config}/zsh
 # Use vim as the manpager (requires vim-manpager)
 export MANPAGER="nvim -c MANPAGER -"
 
-# dotfiles link management
-export DOTFILES_REPO_PATH="$HOME/.dotfiles"
-
 # Enable extglob pattern recognition
 setopt extendedglob
 
@@ -189,6 +186,7 @@ function edit-command-line-inplace() {
 }
 
 zle -N edit-command-line-inplace
+# bindkey commands don't seem to work in tmux :(
 bindkey "^X^E" edit-command-line-inplace
 
 # >>> conda initialize >>>
@@ -221,3 +219,6 @@ export FPATH="$REPOS/eza/completions/zsh:$FPATH"
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# AWS sso
+export AWS_DEFAULT_PROFILE=nikoli

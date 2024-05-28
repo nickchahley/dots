@@ -18,11 +18,10 @@
 	ci       = commit
 	co       = checkout
 	br       = branch
+	brr      = branch -r
 	undosoft = reset 'HEAD@{1}'
 	unstage  = restore --staged
 	un       = restore --staged
-	u        = restore --staged
-	ua       = restore --staged .
 	d        = diff
 	dt       = difftool
 	df       = diff-files
@@ -31,7 +30,11 @@
 	last     = log -1 HEAD
 	l        = log
 	lo       = log --oneline
-	lp       = log --patch   # Show file changes along with log
+	lp       = log --patch       # Show file changes along with log
+	staash   = stash --all
+	fpr      = fetch origin +refs/pull/*:refs/remotes/origin/pull/*
+
+	bl = blame -w -C -C -C # ignore whitespace, follow lines moved or copied (refactored)
 
 	# Pretty git logs
 	lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
@@ -39,6 +42,7 @@
 	lg = !"git lg1"
 
     parent = "!git show-branch | grep '*' | grep -v \"$(git rev-parse --abbrev-ref HEAD)\" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//' #"
+
 
 
 [merge]
@@ -56,6 +60,7 @@
 	# When creating a new branch off a remote branch, always set it up to
 	# track the remote branch so that we can pull from there.
 	autoseupmerge = always
+	sort = -committerdate
 
 [branch "main"]
 	# Comment is from not me, but a good explanation
@@ -92,3 +97,9 @@
 
 [credential]
 	helper = cache
+[rerere]
+	enabled = true
+[column]
+	ui = auto
+[maintenance]
+	repo = /home/nikoli/repos/mec
