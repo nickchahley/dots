@@ -73,6 +73,23 @@ profile home-hdmi {
 	exec swaymsg workspace 10 output "HDMI-A-1"
 }
 
+profile home-one { 
+	output "eDP-1" position 0,1200
+	output "Dell Inc. DELL U2415 CFV9N6B21Y5S" position 0,0 mode 1920x1200
+
+	exec swaymsg workspace 1 output "eDP-1"
+	exec swaymsg workspace 2 output "eDP-1"
+	exec swaymsg workspace 3 output "eDP-1"
+	exec swaymsg workspace 4 output "eDP-1"
+	exec swaymsg workspace 5 output "eDP-1"
+
+	exec swaymsg workspace 6 output  "DP-5"
+	exec swaymsg workspace 7 output  "DP-5"
+	exec swaymsg workspace 8 output  "DP-5"
+	exec swaymsg workspace 9 output  "DP-5"
+	exec swaymsg workspace 10 output "DP-5"
+}
+
 profile home-dp5 {
 	output "eDP-1" position 0,1200
 	output "DP-5" position 0,0
