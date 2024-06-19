@@ -4,7 +4,8 @@
 
 profile work-one {
 	output "eDP-1" position 0,0
-	output "Acer Technologies ED320QR S TJNAA0033W01" position 1920,0 mode 1920x1080
+	# output "Acer Technologies ED320QR S TJNAA0033W01" position 1920,0 mode 1920x1080
+	output  "Hewlett Packard HP LA1956x 3CQ2342KMV" position 1920,0 mode 1280x1024
 
 	exec swaymsg workspace 1 output "eDP-1"
 	exec swaymsg workspace 2 output "eDP-1"

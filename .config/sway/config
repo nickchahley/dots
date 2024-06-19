@@ -45,7 +45,6 @@ set $fontsize 6
 font pango:MesloLGS NF $fontsize
 
 # Marks
-
 # https://github.com/ilya-zlobintsev/sway-marker
 # Can't seem to bind alt+m ?? So use super instead
 # bindsym --to-code $two+m exec ~/.local/bin/sway-marker mark

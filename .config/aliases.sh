@@ -152,9 +152,6 @@ alias lr="cd ~/.local/repos"
 	alias music='cd ~/music/library/'
 # }}}
 # media
-# set default audio dev to bluetooth headphones (airpods)
-alias pablu='paswitch blue'
-alias pablue='paswitch blue'
 # Dualshock 4
 alias ds4='ds4drv --hidraw --led 000000'
 alias ds4b='ds4drv --hidraw --led 00ffff'
@@ -179,6 +176,7 @@ alias swayouts="swaymsg -pt get_outputs | grep -e 'Output\|Current\|Position'"
 alias sm='swaymsg'
 alias smo="swayouts"
 alias kr="kanshi-reload && swaymsg -p -t get_outputs | grep 'Output\|Current\|Position'"
+alias dp1up='swaymsg output "eDP-1" position 0 1080 && swaymsg output "DP-1" position 0 0 mode 1920x1080'
 
 # Apply the bash default aliases for ls and grep 
 alias dir='dir --color=auto'
@@ -226,11 +224,6 @@ alias cel='conda env list'
 alias co='conda'
 alias amix='pavucontrol'
 
-alias xm5-on='bluetoothctl connect 88:C9:E8:4A:03:97'
-alias xm5-off='bluetoothctl disconnect 88:C9:E8:4A:03:97'
-alias xm4-on='bluetoothctl connect F8:4E:17:34:41:12'
-alias xm4-off='bluetoothctl disconnect F8:4E:17:34:41:12'
-
 alias acget='curl --cookie ~/.cookies/adventofcode.txt >> input.txt'
 alias lc='libreoffice --calc'
 alias files='nautilus .'
@@ -245,8 +238,19 @@ alias ga='grimshot --notify save area'
 alias gw='grimshot --notify save window'
 
 alias ftl='/home/nikoli/.steam/debian-installation/steamapps/common/FTL Faster Than Light/FTL'
-
 alias userdata='cat /home/nikoli/projects/00007-aws-ec2/user-data/nikoli-user-data.yaml | y'
-
 alias dvcl='dvc list --dvc-only -R' 
+alias ta='tmux attach -t'
+alias tad='tmux attach -t diary'
+
+# Bluetooth
+alias blue='bluetoothctl'
+alias xm5-on='bluetoothctl connect 88:C9:E8:4A:03:97'
+alias xm5-off='bluetoothctl disconnect 88:C9:E8:4A:03:97'
+alias xm4-on='bluetoothctl connect F8:4E:17:34:41:12'
+alias xm4-off='bluetoothctl disconnect F8:4E:17:34:41:12'
+alias squares='bluetoothctl connect  C6:C7:CE:8D:6C:C3'
+
+alias dockkill='docker kill rev-proxy-service'
+
 # vim: ft=bash: ts=2: sw=2: set nowrap:
