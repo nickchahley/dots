@@ -189,6 +189,10 @@ zle -N edit-command-line-inplace
 # bindkey commands don't seem to work in tmux :(
 bindkey "^X^E" edit-command-line-inplace
 
+# Search history with already entered text
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/nikoli/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"

@@ -44,16 +44,19 @@ alias rsync_changes='rsync --info=progress2 --delete -r'
 alias sudoe='sudo -E'
 alias sudoedit='sudo -E nvim'
 alias isudo='sudo -i'
+alias treed='\tree -d -C'
 alias tt='tree -L2'
-alias tree2='tree -L2'
+alias treed2='\tree -C -d -L 2'
 alias t2='tree -L2'
 alias tree3='tree -L3'
 alias t3='tree -L3'
+alias treed3='\tree -C -d -L 3'
 alias tree4='tree -L4'
 alias t4='tree -L4'
-alias treed='tree -d'
+alias treed='\tree -C -d'
 alias hg='history | grep'
 alias svim='sudo -E nvim'
+alias hg='history | grep'
 
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias whatmyip='dig +short myip.opendns.com @resolver1.opendns.com'
@@ -80,36 +83,35 @@ alias lsh="cd ~/.local/share"
 alias repos="cd ~/.local/repos"
 alias lr="cd ~/.local/repos"
 
-
-	# Apt {{{
-		alias addppa='sudo add-apt-repository'
-		alias badppa='sudo add-apt-repository -r'
-		alias agud='sudo apt update'
-		alias agi='sudo apt install'
-		alias agis='sudo apt install -s'
-		alias agiy='sudo apt install -y'
-		alias agug='sudo apt update && sudo apt upgrade'
-		alias agr='sudo apt remove'
-		alias agar='sudo apt autoremove'
-		# search for by keywoard
-		alias agcs='apt-cache search'
-		alias afs='apt-file search'
-		alias searchpkg='apt-file search'
-		# purge: rm package and all config files
-		alias agrp='sudo apt --purge remove'
-		alias agpr='sudo apt --purge remove'
-		alias agrpy='sudo apt --purge remove -y'
-		alias agpry='sudo apt --purge remove -y'
-	# }}}
+# Apt {{{
+	alias addppa='sudo add-apt-repository'
+	alias badppa='sudo add-apt-repository -r'
+	alias agud='sudo apt update'
+	alias agi='sudo apt install'
+	alias agis='sudo apt install -s'
+	alias agiy='sudo apt install -y'
+	alias agug='sudo apt update && sudo apt upgrade'
+	alias agr='sudo apt remove'
+	alias agar='sudo apt autoremove'
+	alias alug='apt list --upgradable'
+	# search for by keywoard
+	alias agcs='apt-cache search'
+	alias afs='apt-file search'
+	alias searchpkg='apt-file search'
+	# purge: rm package and all config files
+	alias agrp='sudo apt --purge remove'
+	alias agpr='sudo apt --purge remove'
+	alias agrpy='sudo apt --purge remove -y'
+	alias agpry='sudo apt --purge remove -y'
 # }}}
-	# use for terminal {{{
-		alias dontwant='\rm -r'
-		alias dowant='cp -r'
-		alias cya='sudo reboot'
-		alias kthxbai='sudo shutdown now'
-		# :(
-		alias encourage='cat "/home/nikoli/Documents/Nice Words/micheal_blough"'
-	# }}}
+# use for terminal {{{
+	alias dontwant='\rm -r'
+	alias dowant='cp -r'
+	alias cya='sudo reboot'
+	alias kthxbai='sudo shutdown now'
+	# :(
+	alias encourage='cat "/home/nikoli/Documents/Nice Words/micheal_blough"'
+# }}}
 # }}}
 # Literal Trash Commands {{{
 	# Using rm to move files to trash is like weed. It is common and pleasing but
@@ -251,6 +253,8 @@ alias xm4-on='bluetoothctl connect F8:4E:17:34:41:12'
 alias xm4-off='bluetoothctl disconnect F8:4E:17:34:41:12'
 alias squares='bluetoothctl connect  C6:C7:CE:8D:6C:C3'
 
-alias dockkill='docker kill rev-proxy-service'
+alias dkr='docker kill rev-proxy-service'
 
+alias csvl='csvlook'
+alias csvc='csvcut'
 # vim: ft=bash: ts=2: sw=2: set nowrap:

@@ -17,6 +17,7 @@
 	aa       = add --all
 	ci       = commit
 	co       = checkout
+	sw       = switch
 	br       = branch
 	brr      = branch -r
 	undosoft = reset 'HEAD@{1}'

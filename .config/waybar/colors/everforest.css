@@ -1,0 +1,11 @@
+@define-color theme-bar-bg #323232;
+@define-color theme-bg  #272e33;
+@define-color theme-bg0 #292d2e;
+@define-color theme-bg1 #333c43;
+@define-color theme-bg2 #414b50;
+@define-color theme-fg #d3c6aa;
+
+@define-color theme-green #a7c080;
+@define-color theme-red #e67e80;
+@define-color theme-red-dim #bf696a;
+@define-color theme-yellow #ddbc7f;

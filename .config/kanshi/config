@@ -2,6 +2,50 @@
 # swaymsg -t get_outputs -p | grep Output
 # Use " instead of '
 
+profile imac {
+	# tput DP-1 'Apple Computer Inc Color LCD 0x00000000'
+	output "eDP-1" position 0,0
+	output "Apple Computer Inc Color LCD 0x00000000" position 1920,0 mode 2560x1440
+	exec bash ~/.config/kanshi/set-workspace
+}
+
+profile yodoit-h {
+	output "eDP-1" position 0,0
+	output "Unknown TYPEC demoset-1" position 1920,0
+	exec bash ~/.config/kanshi/set-workspace
+}
+
+profile work-three {
+	output "eDP-1" position 0,0
+	output  "Hewlett Packard HP LA1956x 3CQ2342KMV" position 1920,0 mode 1280x1024
+	output "Dell Inc. DELL P2419H JZFYDZ2" position 3200,-400 transform 270
+
+	exec swaymsg workspace 1 output "eDP-1"
+	exec swaymsg workspace 2 output "eDP-1"
+	exec swaymsg workspace 3 output "eDP-1"
+	exec swaymsg workspace 4 output "eDP-1"
+	exec swaymsg workspace 5 output "eDP-1"
+
+	exec swaymsg workspace 6 output  "DP-1"
+	exec swaymsg workspace 7 output  "DP-1"
+	exec swaymsg workspace 8 output  "DP-1"
+	exec swaymsg workspace 9 output  "DP-1"
+	exec swaymsg workspace 10 output "DP-1"
+	exec swaymsg workspace 11 output "DP-1"
+	exec swaymsg workspace 12 output "DP-1"
+	exec swaymsg workspace 13 output "DP-1"
+
+	exec swaymsg workspace 14 output "HDMI-1"
+	exec swaymsg workspace 15 output "HDMI-1"
+	exec swaymsg workspace 16 output "HDMI-1"
+	exec swaymsg workspace 17 output "HDMI-1"
+
+	exec swaymsg workspace 1
+	exec swaymsg workspace 14
+	exec swaymsg workspace 6
+
+}
+
 profile work-one {
 	output "eDP-1" position 0,0
 	# output "Acer Technologies ED320QR S TJNAA0033W01" position 1920,0 mode 1920x1080
@@ -24,37 +68,6 @@ profile work-one {
 
 	exec swaymsg workspace 1
 	exec swaymsg workspace 6
-}
-
-profile work-extra {
-	# When FC is out of the office and I steal his monitor
-	output "DP-3" position 3840,0
-	output "DP-4" position 1920,0
-	output "eDP-1" position 0,0
-	# Using the device names are not working for me atm
-	# DP-4
-	# output "Acer Technologies ED320QR S TJNAA0033W01" position 1920,0 mode 1920x1080
-	# DP-3
-	# output "Lenovo Group Limited L24q-20 U4P06BRV" position 3840,0 mode 2560x1440 
-
-	exec swaymsg workspace 1 output "eDP-1"
-	exec swaymsg workspace 2 output "eDP-1"
-	exec swaymsg workspace 3 output "eDP-1"
-	exec swaymsg workspace 4 output "eDP-1"
-	exec swaymsg workspace 5 output "eDP-1"
-
-	exec swaymsg workspace 6 output  "DP-4"
-	exec swaymsg workspace 7 output  "DP-4"
-	exec swaymsg workspace 8 output  "DP-4"
-	exec swaymsg workspace 9 output  "DP-4"
-	exec swaymsg workspace 10 output "DP-4"
-	exec swaymsg workspace 11 output "DP-4"
-	exec swaymsg workspace 12 output "DP-4"
-	exec swaymsg workspace 13 output "DP-4"
-
-	exec swaymsg workspace 14 output "DP-3"
-	exec swaymsg workspace 15 output "DP-3"
-	exec swaymsg workspace 16 output "DP-3"
 }
 
 profile home-hdmi {
@@ -113,29 +126,65 @@ profile home-dp5 {
 # mouse with a minimum velocity. Not required to move b/t horizontal displays. 
 # Vert offset of 120 (ex. y1200, y120) seems to be the sweet spot for mouse
 # movement without breaking kbd focus navigation (125 breaks it)
-profile home-three {
-	output "eDP-1" position 0,1200
-  output "HDMI-A-1"  position 2020,0 transform 180
-  output "DP-1"  position 100,120
-  # output "Dell Inc. DELL U2415 CFV9N8A629UL"  position 1920,0 transform 270
-  # output "Dell Inc. DELL U2415 CFV9N6B21Y5S"  position 0,1000
+# profile home-three {
+# 	output "eDP-1" position 0,1200
+#   output "HDMI-A-1"  position 2020,0 transform 180
+#   output "DP-1"  position 100,120
+#   # output "Dell Inc. DELL U2415 CFV9N8A629UL"  position 1920,0 transform 270
+#   # output "Dell Inc. DELL U2415 CFV9N6B21Y5S"  position 0,1000
+#
+# 	exec swaymsg workspace 1 output  "eDP-1"
+# 	exec swaymsg workspace 2 output  "eDP-1"
+# 	exec swaymsg workspace 3 output  "eDP-1"
+# 	exec swaymsg workspace 4 output  "eDP-1"
+# 	exec swaymsg workspace 5 output  "eDP-1"
+#
+# 	exec swaymsg workspace 6 output  "DP-1"
+# 	exec swaymsg workspace 7 output  "DP-1"
+# 	exec swaymsg workspace 8 output  "DP-1"
+# 	exec swaymsg workspace 9 output  "DP-1"
+# 	exec swaymsg workspace 10 output "DP-1"
+#
+# 	exec swaymsg workspace 11 output "HDMI-A-1"
+# 	exec swaymsg workspace 12 output "HDMI-A-1"
+# 	exec swaymsg workspace 13 output "HDMI-A-1"
+# 	exec swaymsg workspace 14 output "HDMI-A-1"
+# 	exec swaymsg workspace 15 output "HDMI-A-1"
+# }
 
-	exec swaymsg workspace 1 output  "eDP-1"
-	exec swaymsg workspace 2 output  "eDP-1"
-	exec swaymsg workspace 3 output  "eDP-1"
-	exec swaymsg workspace 4 output  "eDP-1"
-	exec swaymsg workspace 5 output  "eDP-1"
+profile work-four {
+	# This seems to require manual HDMI-A-1 transform 0 afterwards??
+	output "eDP-1" position 0,0
+	# output "Lenovo Group Limited L24q-20 U4P06BRV" position 1920,0
+	output "HDMI-A-1" position 1920,0
+	output  "Hewlett Packard HP LA1956x 3CQ2342KMV" position 4480,0 mode 1280x1024
 
-	exec swaymsg workspace 6 output  "DP-1"
-	exec swaymsg workspace 7 output  "DP-1"
-	exec swaymsg workspace 8 output  "DP-1"
-	exec swaymsg workspace 9 output  "DP-1"
-	exec swaymsg workspace 10 output "DP-1"
+	exec swaymsg workspace 1 output "eDP-1"
+	exec swaymsg workspace 2 output "eDP-1"
+	exec swaymsg workspace 3 output "eDP-1"
+	exec swaymsg workspace 4 output "eDP-1"
+	exec swaymsg workspace 5 output "eDP-1"
 
-	exec swaymsg workspace 11 output "HDMI-A-1"
-	exec swaymsg workspace 12 output "HDMI-A-1"
-	exec swaymsg workspace 13 output "HDMI-A-1"
-	exec swaymsg workspace 14 output "HDMI-A-1"
-	exec swaymsg workspace 15 output "HDMI-A-1"
+	exec swaymsg workspace 6 output  HDMI-A-1
+	exec swaymsg workspace 7 output  HDMI-A-1
+	exec swaymsg workspace 8 output  HDMI-A-1
+	exec swaymsg workspace 9 output  HDMI-A-1
+	exec swaymsg workspace 10 output HDMI-A-1
+	exec swaymsg workspace 11 output HDMI-A-1
+	exec swaymsg workspace 12 output HDMI-A-1
+
+	exec swaymsg workspace 13 output DP-1
+	exec swaymsg workspace 14 output DP-1
+	exec swaymsg workspace 15 output DP-1
+	exec swaymsg workspace 16 output DP-1
+	exec swaymsg workspace 17 output DP-1
+	exec swaymsg workspace 18 output DP-1
+	exec swaymsg workspace 19 output DP-1
+
+	exec swaymsg workspace 1
+	exec swaymsg workspace 14
+	exec swaymsg workspace 6
+	
+	exec swaymsg output "HDMI-A-1" transform 0
+
 }
-

@@ -1,4 +1,4 @@
-@import "colors.css";
+@import "colors/everforest.css";
 
 /* Reset all styles */
 * {
@@ -36,11 +36,16 @@ window#waybar {
     border: 1px solid @theme-green;
 }
 
-/* line separator hack */
+/* vertical line separator hack */
 #language, #pulseaudio, #network, #memory, #temperature, #battery, #clock {
     padding-right: 8px;
     padding-left: 8px;
     border-right: 1px solid @theme-fg;
+}
+
+#pulseaudio.muted {
+    color: @theme-red;
+    /* color: @theme-red-dim; */
 }
 
 /* vim: set expandtab: sw=4
