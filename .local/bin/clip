@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+if [ $XDG_SESSION_TYPE = 'wayland' ]; then
+	copy(){
+		wl-copy "$@"
+	}
+	paste() {
+		wl-paste
+	}
+else
+	copy(){
+		xclip -selection clipboard "$@"
+	}
+	paste() {
+		xclip -o -selection clipboard
+	}
+fi
+
+
+# Looks wack but works
+"$1" "${@:2}"

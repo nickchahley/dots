@@ -31,9 +31,13 @@
 	last     = log -1 HEAD
 	l        = log
 	lo       = log --oneline
+	loh      = log --oneline -n10
 	lp       = log --patch       # Show file changes along with log
 	staash   = stash --all
 	fpr      = fetch origin +refs/pull/*:refs/remotes/origin/pull/*
+
+	diff1 = diff HEAD~1 HEAD
+	diff2 = diff HEAD~2 HEAD~1
 
 	bl = blame -w -C -C -C # ignore whitespace, follow lines moved or copied (refactored)
 
@@ -41,6 +45,7 @@
 	lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
 	lg = !"git lg1"
+	lgh = !"git lg -n10"
 
     parent = "!git show-branch | grep '*' | grep -v \"$(git rev-parse --abbrev-ref HEAD)\" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//' #"
 

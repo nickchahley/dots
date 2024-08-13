@@ -1,0 +1,3 @@
+[submodule ".config/pandoc/ext/pagebreak"]
+	path = .config/pandoc/ext/pagebreak
+	url = git@github.com:pandoc-ext/pagebreak.git

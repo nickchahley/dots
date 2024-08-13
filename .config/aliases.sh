@@ -1,4 +1,15 @@
 # TODO into bin for fish compat
+psed='perl -i -p -e'
+
+# Terminal clipboard utilites. Deps on clip exec which should be tracked along
+# with this file
+alias y='clip copy'
+alias p='clip paste'
+alias lns='ln -s "`y`"'
+alias ycd='pwd | y'
+alias cdp='cd "`y`"'
+alias mvp='mv "`y`" ./'
+alias ep='nvim `y`'
 
 # copy the hash of the previous commit to system clipboard
 # alias gitlastci='git rev-parse --short HEAD | xclip -selection clipboard; echo SHA of last commit copied to clipboard'
@@ -12,6 +23,7 @@ alias git-sci='git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{
 # Aliases set using logic are moved to respective shell's aliases file
 # ex. ~/.config/zsh/aliases.sh, ~/.config/fish/aliases.fish
 alias vim='nvim' # Muscle memory is still vim
+alias vims='vim -S Session.vim'
 alias realias='source ~/.config/aliases.sh'
 alias aliases='vim ~/.config/aliases.sh && realias'
 alias ra='realias'
