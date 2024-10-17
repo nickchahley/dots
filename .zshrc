@@ -126,6 +126,7 @@ fif() {
   rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' --preview-window='70%:wrap' || rg --ignore-case --pretty --context 10 '$1' {}"
 }
 
+# FIXME: why do I have this? Does it work?
 rga-fzf() {
 	# open file after the fuzzy search of contents. Should also search pdfs, docs
 	RG_PREFIX="rga --files-with-matches"
@@ -226,3 +227,45 @@ export NVM_DIR="$HOME/.config/nvm"
 
 # AWS sso
 export AWS_DEFAULT_PROFILE=nikoli
+eval #compdef nf-core
+
+_nf_core_completion() {
+    local -a completions
+    local -a completions_with_descriptions
+    local -a response
+    (( ! $+commands[nf-core] )) && return 1
+
+    response=("${(@f)$(env COMP_WORDS="${words[*]}" COMP_CWORD=$((CURRENT-1)) _NF_CORE_COMPLETE=zsh_complete nf-core)}")
+
+    for type key descr in ${response}; do
+        if [[ "$type" == "plain" ]]; then
+            if [[ "$descr" == "_" ]]; then
+                completions+=("$key")
+            else
+                completions_with_descriptions+=("$key":"$descr")
+            fi
+        elif [[ "$type" == "dir" ]]; then
+            _path_files -/
+        elif [[ "$type" == "file" ]]; then
+            _path_files -f
+        fi
+    done
+
+    if [ -n "$completions_with_descriptions" ]; then
+        _describe -V unsorted completions_with_descriptions -U
+    fi
+
+    if [ -n "$completions" ]; then
+        compadd -U -V unsorted -a completions
+    fi
+}
+
+# nextflow bioinformatic pipes completions
+# eval "$(_NF_CORE_COMPLETE=zsh_source nf-core)" # this is present inside of a
+# conda env
+PATH="$PATH:$HOME/.local/repos/sratoolkit.3.1.1-ubuntu64/bin"
+
+[ -s "/home/nikoli/.scm_breeze/scm_breeze.sh" ] && source "/home/nikoli/.scm_breeze/scm_breeze.sh"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform

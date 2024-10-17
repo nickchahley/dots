@@ -5,4 +5,14 @@
     token = dsat_160Q3imSIAB95nFwkd3wLwcUGgh9AAvIGV8YxuB4qH5xhfCrt
     url = https://studio.iterative.ai
 
+
+['remote "s3"']
+    url = s3://dvc-simmunome-dev
+    region = ca-central-1
+
+[cache]
+    dir = /home/nikoli/data/dvc-cache
+    shared = group
+    type = symlink
+
 # vim: ts=4:sw=4:

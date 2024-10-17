@@ -1,35 +1,14 @@
-# TODO into bin for fish compat
-psed='perl -i -p -e'
-
-# Terminal clipboard utilites. Deps on clip exec which should be tracked along
-# with this file
-alias y='clip copy'
-alias p='clip paste'
-alias lns='ln -s "`y`"'
-alias ycd='pwd | y'
-alias cdp='cd "`y`"'
-alias mvp='mv "`y`" ./'
-alias ep='nvim `y`'
-
-# copy the hash of the previous commit to system clipboard
-# alias gitlastci='git rev-parse --short HEAD | xclip -selection clipboard; echo SHA of last commit copied to clipboard'
-alias git-ammendci='git rebase -i $(git rev-parse HEAD)'
-
-# Populate commit message with those of orphaned commits (ex. when squashing
-# after a soft resest)
-alias git-lastci='git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"'
-alias git-sci='git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"'
-
 # Aliases set using logic are moved to respective shell's aliases file
 # ex. ~/.config/zsh/aliases.sh, ~/.config/fish/aliases.fish
-alias vim='nvim' # Muscle memory is still vim
-alias vims='vim -S Session.vim'
-alias realias='source ~/.config/aliases.sh'
-alias aliases='vim ~/.config/aliases.sh && realias'
-alias ra='realias'
-alias al='aliases'
-alias whichdistro='lsb_release -a'
-#alias thefuck='fuck'
+
+alias resh='exec $SHELL'
+
+# TODO into bin for fish compat
+alias psed='perl -i -p -e'
+
+# fixme: these stall startup ??
+# alias fzfp="fzf --preview='cat {}'"
+# alias fpn="nvim $(fzf --preview='cat {}')"
 
 alias ...='cd ../../'
 alias ....='cd ../../../'
@@ -69,31 +48,33 @@ alias treed='\tree -C -d'
 alias hg='history | grep'
 alias svim='sudo -E nvim'
 alias hg='history | grep'
+alias vim='nvim' # Muscle memory is still vim
+alias vims='vim -S Session.vim'
+alias realias='source ~/.config/aliases.sh'
+alias aliases='vim ~/.config/aliases.sh && realias'
+alias ra='realias'
+alias al='aliases'
+alias whichdistro='lsb_release -a'
+#alias thefuck='fuck'
 
-alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
-alias whatmyip='dig +short myip.opendns.com @resolver1.opendns.com'
-alias pubip='curl ifconfig.me'
+# Terminal clipboard utilites. Deps on clip exec which should be tracked along
+# with this file
+alias y='clip copy'
+alias p='clip paste'
+alias lns='ln -s "`y`"'
+alias py='pwd | y'
+alias cdp='cd "`p`"'
+alias mvp='mv "`p`" ./'
+alias ep='nvim `p`'
 
+# copy the hash of the previous commit to system clipboard
+# alias gitlastci='git rev-parse --short HEAD | xclip -selection clipboard; echo SHA of last commit copied to clipboard'
+alias git-ammendci='git rebase -i $(git rev-parse HEAD)'
 
-# TODO learn to use this crazy shit
-# for the pushd and popd commands that I shoud use but don't understand
-alias dirs='dirs -v'
-
-# Navigation 
-alias pro='cd ~/projects'
-alias doc='cd ~/documents'
-alias reports='cd ~/documents'
-alias dat='cd ~/data'
-alias data='cd ~/data'
-alias db='cd ~/data/Databases'
-alias dot="cd ~/.dotfiles"
-alias con='cd ~/.config'
-alias lbin="cd ~/.local/bin"
-alias lb="cd ~/.local/bin"
-alias lshare="cd ~/.local/share"
-alias lsh="cd ~/.local/share"
-alias repos="cd ~/.local/repos"
-alias lr="cd ~/.local/repos"
+# Populate commit message with those of orphaned commits (ex. when squashing
+# after a soft resest)
+alias git-lastci='git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"'
+alias git-sci='git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"'
 
 # Apt {{{
 	alias addppa='sudo add-apt-repository'
@@ -198,11 +179,14 @@ alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias ls='ls --color=auto'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 alias bat='batcat'
+# ls aliases subject to be overwritten by scm-breeze
+alias ls='ls --color=auto'
+alias lal='ls -alF'
+alias la='ls -A'
+alias lsa='ls -A'
+alias lsl='ls -alF'
+alias l='\ls -CF'
 
 alias cn='~/.config/nvim/lua'
 alias cnm='nvim ~/.config/nvim/lua/modules'
@@ -213,6 +197,7 @@ alias csw='nvim ~/.config/sway'
 alias es='nvim ~/.config/sway/config'
 alias esc='vim ~/.config/sway/compatible.config'
 alias eal='nvim ~/.config/alacritty/alacritty.yml'
+alias ftl='/home/nikoli/.steam/debian-installation/steamapps/common/FTL Faster Than Light/FTL'
 
 # want to have these also cd into the current file dir
 # cd %:p:h:pwd
@@ -224,38 +209,32 @@ alias ggdi='gsettings get org.gnome.desktop.interface'
 alias gsdi='gsettings set org.gnome.desktop.interface'
 alias update_starship='curl -sS https://starship.rs/install.sh | sh'
 alias disable_conda_prompt_modifier='conda config --set changeps1 False'
+
+# Bitwarden cli
 alias pw='bw get password'
 alias un-'bw get username'
 alias genpw='bw generate -luns --length 14'
 alias genpp='bw generate --passphrase --words 4 --separator --includeNumber'
+
+# writing docs and wanting to quickly take and name screenshots
+alias grima='grimshot --notify save area'
+alias grimw='grimshot --notify save window'
+
+
+# Network
+alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias whatmyip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias pubip='curl ifconfig.me'
 alias network-connections='nmcli con show'
 alias network-scan='nmcli -p device wifi'
-alias f='source ranger'
+
+# Conda
 alias ca='conda activate'
 alias cg='conda activate graphs'
 alias cap='conda activate preprocessing'
 alias cel='conda env list'
 alias co='conda'
-alias amix='pavucontrol'
-
-alias acget='curl --cookie ~/.cookies/adventofcode.txt >> input.txt'
-alias lc='libreoffice --calc'
-alias files='nautilus .'
-alias fil='nautilus .'
-alias keyvar='swaymsg input type:keyboard xkb_variant'
-alias ya='yadm'
-alias fman='compgen -c | fzf | xargs man'
-alias ts='tomatoshell'
-
-# writing docs and wanting to quickly take and name screenshots
-alias ga='grimshot --notify save area'
-alias gw='grimshot --notify save window'
-
-alias ftl='/home/nikoli/.steam/debian-installation/steamapps/common/FTL Faster Than Light/FTL'
-alias userdata='cat /home/nikoli/projects/00007-aws-ec2/user-data/nikoli-user-data.yaml | y'
-alias dvcl='dvc list --dvc-only -R' 
-alias ta='tmux attach -t'
-alias tad='tmux attach -t diary'
+alias crm='conda remove --yes --all -n'
 
 # Bluetooth
 alias blue='bluetoothctl'
@@ -263,10 +242,25 @@ alias xm5-on='bluetoothctl connect 88:C9:E8:4A:03:97'
 alias xm5-off='bluetoothctl disconnect 88:C9:E8:4A:03:97'
 alias xm4-on='bluetoothctl connect F8:4E:17:34:41:12'
 alias xm4-off='bluetoothctl disconnect F8:4E:17:34:41:12'
-alias squares='bluetoothctl connect  C6:C7:CE:8D:6C:C3'
+alias corne-init='bluetoothctl pair C6:C7:CE:8D:6C:C3 && bluetoothctl trust C6:C7:CE:8D:6C:C3 && bluetoothctl connect C6:C7:CE:8D:6C:C3'
 
 alias dkr='docker kill rev-proxy-service'
-
 alias csvl='csvlook'
 alias csvc='csvcut'
+alias acget='curl --cookie ~/.cookies/adventofcode.txt >> input.txt'
+alias lc='libreoffice --calc'
+alias files='nautilus .'
+alias keyvar='swaymsg input type:keyboard xkb_variant'
+alias ya='yadm'
+alias fman='compgen -c | fzf | xargs man'
+alias ts='tomatoshell'
+alias userdata='cat /home/nikoli/projects/00007-aws-ec2/user-data/nikoli-user-data.yaml | y'
+alias dvcl='dvc list --dvc-only -R' 
+alias ta='tmux attach -t'
+alias tad='tmux attach -t diary'
+alias f='source ranger'
+alias amix='pavucontrol'
+alias trimtoken="rename 's/\?token.*//' *"
+alias awso='aws sso login --profile admin'
+
 # vim: ft=bash: ts=2: sw=2: set nowrap:

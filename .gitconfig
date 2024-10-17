@@ -48,19 +48,7 @@
 	lgh = !"git lg -n10"
 
     parent = "!git show-branch | grep '*' | grep -v \"$(git rev-parse --abbrev-ref HEAD)\" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//' #"
-
-
-
-[merge]
-	# Include the summary of merged commits into all newly created merge
-	# commits. The newly created merge commit will contain a one-line summary
-	# of every (well, most) merged commits.
-	log = true
-
-	# Show merge statistics after merge.
-	stat = true
-	tool = "nvimdiff"
-	conflictstyle = diff3
+	mf = mergetool -t fugitive
 
 [branch]
 	# When creating a new branch off a remote branch, always set it up to
@@ -107,5 +95,20 @@
 	enabled = true
 [column]
 	ui = auto
-[maintenance]
-	repo = /home/nikoli/repos/mec
+
+[mergetool]
+	prompt = false
+[mergetool "fugitive"]
+	cmd = nvim -d -c \"wincmd l\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
+[merge]
+	# Include the summary of merged commits into all newly created merge
+	# commits. The newly created merge commit will contain a one-line summary
+	# of every (well, most) merged commits.
+	log = true
+
+	# Show merge statistics after merge.
+	stat = true
+	tool = fugitive
+
+	# tool = "nvimdiff"
+	# conflictstyle = diff3
