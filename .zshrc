@@ -269,3 +269,6 @@ PATH="$PATH:$HOME/.local/repos/sratoolkit.3.1.1-ubuntu64/bin"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
+
+# env var aliases
+source ~/.aws/scripts/profile

@@ -61,6 +61,7 @@ alias whichdistro='lsb_release -a'
 # with this file
 alias y='clip copy'
 alias p='clip paste'
+alias pi='clip paste_im'
 alias lns='ln -s "`y`"'
 alias py='pwd | y'
 alias cdp='cd "`p`"'
@@ -262,5 +263,8 @@ alias f='source ranger'
 alias amix='pavucontrol'
 alias trimtoken="rename 's/\?token.*//' *"
 alias awso='aws sso login --profile admin'
+
+# sway monitor overrides
+alias so-hdmi-right='output "eDP-1" position 0 0 && sm output "HDMI-A-1" position 1920 0'
 
 # vim: ft=bash: ts=2: sw=2: set nowrap:

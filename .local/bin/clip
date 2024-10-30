@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
+append_png() {
+	file="$1"
+	if ! [[ "$file" == *.png ]]; then
+		file="${file}.png"
+	fi
+	# rm repeated dots
+	file=$(echo "$file" | sed 's/\(\.\)\1*/\1/g')
+	echo "$file"
+}
+
 if [ $XDG_SESSION_TYPE = 'wayland' ]; then
 	copy(){
 		wl-copy "$@"
@@ -15,6 +25,11 @@ else
 	}
 fi
 
+paste_im() {
+	# this is so rad
+	file=$(append_png "$1")
+	paste -t image/png > "$file"
+}
 
 # Looks wack but works
 "$1" "${@:2}"
