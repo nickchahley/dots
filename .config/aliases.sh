@@ -77,6 +77,9 @@ alias git-ammendci='git rebase -i $(git rev-parse HEAD)'
 alias git-lastci='git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"'
 alias git-sci='git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"'
 
+# fast git and default dvc init
+alias git-dvc='git init && dvc init && cp ~/data/dvc-bookmarks/config .dvc/config'
+
 # Apt {{{
 	alias addppa='sudo add-apt-repository'
 	alias badppa='sudo add-apt-repository -r'
