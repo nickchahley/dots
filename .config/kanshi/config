@@ -104,22 +104,23 @@ profile home-one {
 	exec swaymsg workspace 10 output "DP-5"
 }
 
-profile home-dp5 {
-	output "eDP-1" position 0,1200
-	output "DP-5" position 0,0
-
-	exec swaymsg workspace 1 output "eDP-1"
-	exec swaymsg workspace 2 output "eDP-1"
-	exec swaymsg workspace 3 output "eDP-1"
-	exec swaymsg workspace 4 output "eDP-1"
-	exec swaymsg workspace 5 output "eDP-1"
-
-	exec swaymsg workspace 6 output  "DP-5"
-	exec swaymsg workspace 7 output  "DP-5"
-	exec swaymsg workspace 8 output  "DP-5"
-	exec swaymsg workspace 9 output  "DP-5"
-	exec swaymsg workspace 10 output "DP-5"
-}
+# out to override with mDP >> adapter single dell at work
+# profile home-dp5 {
+# 	output "eDP-1" position 0,1200
+# 	output "DP-5" position 0,0
+#
+# 	exec swaymsg workspace 1 output "eDP-1"
+# 	exec swaymsg workspace 2 output "eDP-1"
+# 	exec swaymsg workspace 3 output "eDP-1"
+# 	exec swaymsg workspace 4 output "eDP-1"
+# 	exec swaymsg workspace 5 output "eDP-1"
+#
+# 	exec swaymsg workspace 6 output  "DP-5"
+# 	exec swaymsg workspace 7 output  "DP-5"
+# 	exec swaymsg workspace 8 output  "DP-5"
+# 	exec swaymsg workspace 9 output  "DP-5"
+# 	exec swaymsg workspace 10 output "DP-5"
+# }
 
 # Output commands seem to only work if refing connection port, not the display ID
 # Werid: to get mouse to move from display at pos y0 to y1200 I need to move the
@@ -206,4 +207,23 @@ profile work-lenovo {
 	exec swaymsg workspace 10 output DP-1
 	exec swaymsg workspace 11 output DP-1
 	exec swaymsg workspace 12 output DP-1
+}
+
+profile work-dell {
+	output "eDP-1" position 0,0
+	output "Dell Inc. DELL U2415 CFV9N8A629UL" position 1920,0
+
+	exec swaymsg workspace 1 output "eDP-1"
+	exec swaymsg workspace 2 output "eDP-1"
+	exec swaymsg workspace 3 output "eDP-1"
+	exec swaymsg workspace 4 output "eDP-1"
+	exec swaymsg workspace 5 output "eDP-1"
+
+	exec swaymsg workspace 6 output  DP-6
+	exec swaymsg workspace 7 output  DP-6
+	exec swaymsg workspace 8 output  DP-6
+	exec swaymsg workspace 9 output  DP-6
+	exec swaymsg workspace 10 output DP-6
+	exec swaymsg workspace 11 output DP-6
+	exec swaymsg workspace 12 output DP-6
 }

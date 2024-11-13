@@ -266,6 +266,7 @@ alias f='source ranger'
 alias amix='pavucontrol'
 alias trimtoken="rename 's/\?token.*//' *"
 alias awso='aws sso login --profile admin'
+alias colnames='csvcut --names'
 
 # sway monitor overrides
 alias so-hdmi-right='output "eDP-1" position 0 0 && sm output "HDMI-A-1" position 1920 0'
