@@ -1,0 +1,3 @@
+#!/bin/bash
+urlpath="${1:-.}"
+dvc list --dvc-only -R "$urlpath"

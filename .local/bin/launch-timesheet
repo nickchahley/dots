@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+libreoffice --calc /home/nikoli/documents/admin/Timesheets/nchahley_timesheet.xlsx &

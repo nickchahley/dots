@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+show_help() {
+cat << EOF 
+Useage: $0 <inputs> [-o output]
+EOF
+}
+
+shift "$((OPTIND-1))"   # Discard the options and sentinel --
+while getopts ho: opt; do
+	case $opt in
+		h)
+			show_help
+			exit 0
+			;;
+		o)
+			output=$OPTARG
+			;;
+		*)
+			show_help >&2
+			exit 1
+			;;
+	esac
+done
+
+if [[ "$#" == 0 ]]; then
+	show_help
+	exit 1
+elif [[ "$#" == 1 ]]; then
+	input="$1"
+	stem="${input%.*}"
+	output="${stem}.pdf"
+elif (("$#" > 1 )); then
+	while test $# -gt 0; do
+			list="$list $1"
+			shift
+	done
+	input="$list"
+fi
+
+pandoc_opts="\
+	--variable colorlinks=true \
+	"
+
+pandoc $pandoc_opts "$input" -o "$output"

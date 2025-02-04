@@ -1,0 +1,3 @@
+#!/bin/bash
+swaymsg input type:keyboard xkb_variant colemak_dh
+echo colemak_dh

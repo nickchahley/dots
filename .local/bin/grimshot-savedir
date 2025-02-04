@@ -1,0 +1,4 @@
+#!/bin/bash
+SAVEDIR="/home/nikoli/projects/00007-aws-ec2/documents/20240223-internal-training-aws"
+
+grimshot --notify save "$1" "${SAVEDIR}/screenshots/$(date '+%Y%m%d-%H:%H:%S.png')"

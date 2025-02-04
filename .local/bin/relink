@@ -17,4 +17,6 @@ for link; do
         rm -rfv "$link"
         ln -sfv "$reltarget" "$link"
     }
+		# since I'm using this for dvc, set regular permissions
+		chmod 654 "$link"
 done

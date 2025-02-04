@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
+# Suggest setting aliases as follows
+# alias y='clip copy'
+# alias p='clip paste'
+# alias pi='clip paste_im'
+# Then can use ex. 
+# cat ~/.ssh/id_rsa.pub | y 
+#
+# to paste clipboard into terminal use `p`
+# cd `p`
+
 append_png() {
 	file="$1"
 	if ! [[ "$file" == *.png ]]; then
