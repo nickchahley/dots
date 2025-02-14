@@ -1,4 +1,5 @@
 #!/bin/bash
+# calling this from kanshi config DOES NOT WORK 2024-12-23
 ext_src={1:-"DP-1"}
 
 swaymsg workspace 1 output "eDP-1"

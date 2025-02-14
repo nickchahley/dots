@@ -2,11 +2,27 @@
 # swaymsg -t get_outputs -p | grep Output
 # Use " instead of '
 
-profile imac {
-	# tput DP-1 'Apple Computer Inc Color LCD 0x00000000'
-	output "eDP-1" position 0,0
-	output "Apple Computer Inc Color LCD 0x00000000" position 1920,0 mode 2560x1440
-	exec bash ~/.config/kanshi/set-workspace
+profile imacAbove {
+	output "eDP-1" position 0,1440
+	output "Apple Computer Inc Color LCD 0x00000000" position 0,0 mode 2560x1440
+
+	exec swaymsg workspace 1 output "eDP-1"
+	exec swaymsg workspace 2 output "eDP-1"
+	exec swaymsg workspace 3 output "eDP-1"
+	exec swaymsg workspace 4 output "eDP-1"
+	exec swaymsg workspace 5 output "eDP-1"
+
+	exec swaymsg workspace 6 output  "DP-1"
+	exec swaymsg workspace 7 output  "DP-1"
+	exec swaymsg workspace 8 output  "DP-1"
+	exec swaymsg workspace 9 output  "DP-1"
+	exec swaymsg workspace 10 output "DP-1"
+	exec swaymsg workspace 11 output "DP-1"
+	exec swaymsg workspace 12 output "DP-1"
+	exec swaymsg workspace 13 output "DP-1"
+
+	# wish this could replace above, but nogo 2024-12-23
+	# exec bash ~/.config/kanshi/set-workspace
 }
 
 profile yodoit-h {
@@ -49,6 +65,7 @@ profile work-three {
 profile work-one {
 	output "eDP-1" position 0,0
 	# output "Acer Technologies ED320QR S TJNAA0033W01" position 1920,0 mode 1920x1080
+	# HDMI-A-1 'Dell Inc. DELL U2415 CFV9N8A629UL'
 	output  "Hewlett Packard HP LA1956x 3CQ2342KMV" position 1920,0 mode 1280x1024
 
 	exec swaymsg workspace 1 output "eDP-1"
@@ -69,6 +86,31 @@ profile work-one {
 	exec swaymsg workspace 1
 	exec swaymsg workspace 6
 }
+
+# borrowing hdmi cable/forgot adapter at home
+# profile work-hdmi {
+# 	output "eDP-1" position 0,0
+# 	output "HDMI-A-1" position 1920,0 mode 1920x1200
+# 	# output "HDMI-A-1 Dell Inc. DELL U2415 CFV9N8A629UL" position 1920,0 mode 1920x1200
+#
+# 	exec swaymsg workspace 1 output "eDP-1"
+# 	exec swaymsg workspace 2 output "eDP-1"
+# 	exec swaymsg workspace 3 output "eDP-1"
+# 	exec swaymsg workspace 4 output "eDP-1"
+# 	exec swaymsg workspace 5 output "eDP-1"
+#
+# 	exec swaymsg workspace 6 output  "DP-1"
+# 	exec swaymsg workspace 7 output  "DP-1"
+# 	exec swaymsg workspace 8 output  "DP-1"
+# 	exec swaymsg workspace 9 output  "DP-1"
+# 	exec swaymsg workspace 10 output "DP-1"
+# 	exec swaymsg workspace 11 output "DP-1"
+# 	exec swaymsg workspace 12 output "DP-1"
+# 	exec swaymsg workspace 13 output "DP-1"
+#
+# 	exec swaymsg workspace 1
+# 	exec swaymsg workspace 6
+# }
 
 profile home-hdmi {
 	output "eDP-1" position 0,1200
@@ -219,11 +261,11 @@ profile work-dell {
 	exec swaymsg workspace 4 output "eDP-1"
 	exec swaymsg workspace 5 output "eDP-1"
 
-	exec swaymsg workspace 6 output  DP-6
-	exec swaymsg workspace 7 output  DP-6
-	exec swaymsg workspace 8 output  DP-6
-	exec swaymsg workspace 9 output  DP-6
-	exec swaymsg workspace 10 output DP-6
-	exec swaymsg workspace 11 output DP-6
-	exec swaymsg workspace 12 output DP-6
+	exec swaymsg workspace 6 output  DP-5
+	exec swaymsg workspace 7 output  DP-5
+	exec swaymsg workspace 8 output  DP-5
+	exec swaymsg workspace 9 output  DP-5
+	exec swaymsg workspace 10 output DP-5
+	exec swaymsg workspace 11 output DP-5
+	exec swaymsg workspace 12 output DP-5
 }

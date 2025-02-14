@@ -79,6 +79,9 @@ alias git-sci='git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{
 
 # fast git and default dvc init
 alias git-dvc='git init && dvc init && cp ~/data/dvc-bookmarks/config .dvc/config'
+alias cpdvc='cp ~/data/dvc-bookmarks/config .dvc/config'
+
+alias dvcl='dvc list --dvc-only -R' 
 
 # Apt {{{
 	alias addppa='sudo add-apt-repository'
@@ -101,6 +104,7 @@ alias git-dvc='git init && dvc init && cp ~/data/dvc-bookmarks/config .dvc/confi
 	alias agrpy='sudo apt --purge remove -y'
 	alias agpry='sudo apt --purge remove -y'
 # }}}
+alias dpi='sudo dpkg -i'
 # use for terminal {{{
 	alias dontwant='\rm -r'
 	alias dowant='cp -r'
@@ -175,7 +179,9 @@ alias swayouts="swaymsg -pt get_outputs | grep -e 'Output\|Current\|Position'"
 alias sm='swaymsg'
 alias smo="swayouts"
 alias kr="kanshi-reload && swaymsg -p -t get_outputs | grep 'Output\|Current\|Position'"
+alias kancon="vim ~/.config/kanshi/config && kanshi-reload"
 alias dp1up='swaymsg output "eDP-1" position 0 1080 && swaymsg output "DP-1" position 0 0 mode 1920x1080'
+alias sshcon="vim ~/.ssh/config"
 
 # Apply the bash default aliases for ls and grep 
 alias dir='dir --color=auto'
@@ -244,8 +250,10 @@ alias crm='conda remove --yes --all -n'
 alias blue='bluetoothctl'
 alias xm5-on='bluetoothctl connect 88:C9:E8:4A:03:97'
 alias xm5-off='bluetoothctl disconnect 88:C9:E8:4A:03:97'
-alias xm4-on='bluetoothctl connect F8:4E:17:34:41:12'
-alias xm4-off='bluetoothctl disconnect F8:4E:17:34:41:12'
+alias xm4-on='bluetoothctl connect F8:4E:17:4D:07:77'
+alias xm4-off='bluetoothctl disconnect F8:4E:17:4D:07:77'
+alias xmfn='xm4-on'
+alias xmff='xm4-off'
 alias corne-init='bluetoothctl pair C6:C7:CE:8D:6C:C3 && bluetoothctl trust C6:C7:CE:8D:6C:C3 && bluetoothctl connect C6:C7:CE:8D:6C:C3'
 
 alias dkr='docker kill rev-proxy-service'
@@ -259,8 +267,8 @@ alias ya='yadm'
 alias fman='compgen -c | fzf | xargs man'
 alias ts='tomatoshell'
 alias userdata='cat /home/nikoli/projects/00007-aws-ec2/user-data/nikoli-user-data.yaml | y'
-alias dvcl='dvc list --dvc-only -R' 
 alias ta='tmux attach -t'
+alias tat='tmux attach -t'
 alias tad='tmux attach -t diary'
 alias f='source ranger'
 alias amix='pavucontrol'
@@ -270,5 +278,11 @@ alias colnames='csvcut --names'
 
 # sway monitor overrides
 alias so-hdmi-right='output "eDP-1" position 0 0 && sm output "HDMI-A-1" position 1920 0'
+
+alias ports-listening='sudo lsof -i -P -n | grep LISTEN'
+alias ports="sudo lsof -i -P -n"
+alias kp="~/projects/00011-saas-proxy/rev-proxy-dev/scripts/kill_on_ports.sh"
+alias rplp="~/projects/00011-saas-proxy/rev-proxy-dev/scripts/kill_on_ports.sh && ~/projects/00011-saas-proxy/rev-proxy-dev/scripts/launch_preamble.sh"
+alias kdpr="sudo fuser -k 5000/tcp"
 
 # vim: ft=bash: ts=2: sw=2: set nowrap:

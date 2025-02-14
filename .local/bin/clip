@@ -3,7 +3,8 @@
 # alias y='clip copy'
 # alias p='clip paste'
 # alias pi='clip paste_im'
-# Then can use ex. 
+# 
+# pipe stdout to to clipboard
 # cat ~/.ssh/id_rsa.pub | y 
 #
 # to paste clipboard into terminal use `p`

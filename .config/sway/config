@@ -12,14 +12,19 @@ output * bg ~/pictures/wallpapers/everforest/flowers.png fill
 set $lock swaylock -f -c 272e33 --indicator-radius 170 --indicator-thickness 30
 
 # lock sceen immediately (once we are able to auto login tty1 w/ agetty)
-# exec $lock
+exec $lock
 
 # Turn off displays after idle (seconds)
 # Lock screen after idle (seconds)
 # Lock screen before sleep
+# 15 * 60 = 900
+# exec swayidle -w \
+#   timeout 840 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+#   timeout 900 '$lock' \
+#   before-sleep '$lock'
+
 exec swayidle -w \
-  timeout 3600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-  timeout 10000 '$lock' \
+  timeout 20000 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
   before-sleep '$lock'
 
 # Start <X> (and restart on sway config reload)
