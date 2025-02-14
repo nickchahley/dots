@@ -1,19 +1,4 @@
 P10K=true
-if "$P10K"; then
-	# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-	# Initialization code that may require console input (password prompts, [y/n]
-	# confirmations, etc.) must go above this block; everything else may go below.
-	if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-		source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-	fi
-	# To customize prompt, run `p10k configure` or edit $HOME/.p10k.zsh.
-	[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
-fi
-
-## prompts, we have p10k and startship
-if ! $P10K; then
-	eval "$(starship init zsh)"
-fi
 
 # Make terminal feel like home
 if [ "$(command -v fortune)" ]; then
@@ -21,12 +6,17 @@ if [ "$(command -v fortune)" ]; then
     alias fortune='fortune $HOME/.config/fortunes/nikoli'
 fi
 
-## open new terminals in the last working dir
-function cd
-{
-    builtin cd "$@"
-    pwd > ~/.lastdir
-}
+## prompts, we have p10k and startship
+if "$P10K"; then
+	# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+	# Initialization code that may require console input (password prompts, [y/n]
+	# confirmations, etc.) must go above this block; everything else may go below.
+	if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+		source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+	fi
+else 
+	eval "$(starship init zsh)"
+fi
 
 # START PLUGINS ----
 
@@ -43,6 +33,7 @@ if "$P10K"; then
 fi
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-history-substring-search
+znap source joshskidmore/zsh-fzf-history-search
 
 # an alternative to simple fuzzy tab completion implemented below
 # feels a bit disruptive to my shell workflow
@@ -52,6 +43,13 @@ znap source zsh-users/zsh-history-substring-search
 znap source zsh-users/zsh-syntax-highlighting
 
 # END PLUGINS ----
+
+## open new terminals in the last working dir
+function cd
+{
+    builtin cd "$@"
+    pwd > ~/.lastdir
+}
 
 # Fuzzy tab-completion matching from some person on stackexchange
 # 0 -- vanilla completion (abc => abc)
@@ -225,41 +223,6 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# AWS sso
-export AWS_DEFAULT_PROFILE=nikoli
-eval #compdef nf-core
-
-_nf_core_completion() {
-    local -a completions
-    local -a completions_with_descriptions
-    local -a response
-    (( ! $+commands[nf-core] )) && return 1
-
-    response=("${(@f)$(env COMP_WORDS="${words[*]}" COMP_CWORD=$((CURRENT-1)) _NF_CORE_COMPLETE=zsh_complete nf-core)}")
-
-    for type key descr in ${response}; do
-        if [[ "$type" == "plain" ]]; then
-            if [[ "$descr" == "_" ]]; then
-                completions+=("$key")
-            else
-                completions_with_descriptions+=("$key":"$descr")
-            fi
-        elif [[ "$type" == "dir" ]]; then
-            _path_files -/
-        elif [[ "$type" == "file" ]]; then
-            _path_files -f
-        fi
-    done
-
-    if [ -n "$completions_with_descriptions" ]; then
-        _describe -V unsorted completions_with_descriptions -U
-    fi
-
-    if [ -n "$completions" ]; then
-        compadd -U -V unsorted -a completions
-    fi
-}
-
 # nextflow bioinformatic pipes completions
 # eval "$(_NF_CORE_COMPLETE=zsh_source nf-core)" # this is present inside of a
 # conda env
@@ -267,8 +230,15 @@ PATH="$PATH:$HOME/.local/repos/sratoolkit.3.1.1-ubuntu64/bin"
 
 [ -s "/home/nikoli/.scm_breeze/scm_breeze.sh" ] && source "/home/nikoli/.scm_breeze/scm_breeze.sh"
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/bin/terraform terraform
+# autoload -U +X bashcompinit && bashcompinit
+# complete -o nospace -C /usr/bin/terraform terraform
 
 # env var aliases
-source ~/.aws/scripts/profile
+# source ~/.aws/scripts/profile
+
+# 2025-02-12 put this at EOF else slow launch?
+# To customize prompt, run `p10k configure` or edit $HOME/.p10k.zsh.
+
+if "$P10K"; then
+	[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
+fi
