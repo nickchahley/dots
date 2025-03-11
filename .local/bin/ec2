@@ -2,6 +2,13 @@
 cmd="$1"
 instance_ids="$2"
 
+desc() {
+	aws ec2 describe-instances --instance-ids "$1"
+}
+describe() {
+	desc "$1"
+}
+
 ip() {
 	aws ec2 describe-instances --instance-ids "$1" --query 'Reservations[0].Instances[0].PublicIpAddress'
 }
@@ -9,5 +16,14 @@ ip() {
 state() {
 	aws ec2 describe-instances --instance-ids "$1" --query 'Reservations[0].Instances[0].State.Name'
 }
+
+stop() {
+	aws ec2 stop-instances --instance-ids "$1"
+}
+
+start() {
+	aws ec2 start-instances --instance-ids "$1"
+}
+
 
 $cmd "$instance_ids"
