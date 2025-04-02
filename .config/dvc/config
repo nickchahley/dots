@@ -10,9 +10,11 @@
     url = s3://dvc-simmunome-dev
     region = ca-central-1
 
-[cache]
-    dir = /home/nikoli/data/dvc-cache
-    shared = group
-    type = symlink
+# (2025-02-24) while this SHOULD be efficient, it's causing headaches when
+# trying to change things (ex w/ dvc repro)
+# [cache]
+#     dir = /home/nikoli/data/dvc-cache
+#     shared = group
+#     type = symlink
 
 # vim: ts=4:sw=4:

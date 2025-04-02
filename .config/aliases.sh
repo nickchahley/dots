@@ -79,6 +79,7 @@ alias git-sci='git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{
 
 # fast git and default dvc init
 alias git-dvc='git init && dvc init && cp ~/data/dvc-bookmarks/config .dvc/config'
+alias dvcinit='mkdir .dvc && cp ~/data/dvc-bookmarks/config .dvc/config'
 alias cpdvc='cp ~/data/dvc-bookmarks/config .dvc/config'
 
 alias dvcl='dvc list --dvc-only -R' 
