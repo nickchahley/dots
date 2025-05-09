@@ -10,6 +10,9 @@ alias psed='perl -i -p -e'
 # alias fzfp="fzf --preview='cat {}'"
 # alias fpn="nvim $(fzf --preview='cat {}')"
 
+# get octal permissions
+alias perm='stat -c "%a %n"'
+
 alias ...='cd ../../'
 alias ....='cd ../../../'
 alias mkdirs='mkdir -p'
