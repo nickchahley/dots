@@ -1,21 +1,25 @@
 P10K=true
 
-# Make terminal feel like home
-if [ "$(command -v fortune)" ]; then
-    fortune $HOME/.config/fortunes/nikoli
-    alias fortune='fortune $HOME/.config/fortunes/nikoli'
-fi
+include () {
+	for f in "$@"; do
+		[[ -f "$f" ]] && source "$f"
+	done
+}
 
 ## prompts, we have p10k and startship
 if "$P10K"; then
 	# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 	# Initialization code that may require console input (password prompts, [y/n]
 	# confirmations, etc.) must go above this block; everything else may go below.
-	if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-		source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-	fi
+	include "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 else 
 	eval "$(starship init zsh)"
+fi
+
+# Make terminal feel like home
+if [ "$(command -v fortune)" ]; then
+    fortune $HOME/.config/fortunes/nikoli
+    alias fortune='fortune $HOME/.config/fortunes/nikoli'
 fi
 
 # START PLUGINS ----
@@ -63,8 +67,8 @@ zstyle ':completion:*' matcher-list '' \
 
 # Precaution incase XDG_CONFIG_HOME is unset? What is wrong with me?
 export ZSHCONFIG=${XDG_CONFIG_HOME:=$HOME/.config}/zsh
-[ -f $HOME/.aliases.sh ] && source $HOME/.aliases.sh
-[ -f $ZSHCONFIG/aliases.sh ] && source $ZSHCONFIG/aliases.sh
+include $HOME/.aliases.sh
+include $ZSHCONFIG/aliases.sh
 
 # Enable 256 color support for applications
 # I have never actually used xterm, I really don't understand the whole $TERM
@@ -154,6 +158,7 @@ alias rgf='rga-fzf'
 
 # Line Editor
 # Define a custom zle widget to allow editing command in external editor
+# FIXME: does not work inside of tmux
 EDITOR=nvim
 function edit-command-line-inplace() {
   if [[ $CONTEXT != start ]]; then
@@ -207,7 +212,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-[ -f /home/nikoli/.config/broot/launcher/bash/br ] && source /home/nikoli/.config/broot/launcher/bash/br
+include /home/nikoli/.config/broot/launcher/bash/br
 # git diff before commit
 function gg {
     br --conf ~/.config/broot/git-diff-conf.toml --git-status
@@ -215,7 +220,10 @@ function gg {
 
 # bitwarden cli completions these seem to slow my startup so just use bw --help
 # [ -f $HOME/.local/bin/bw ] && eval "$(bw completion --shell zsh); compdef _bw bw;"
+
 [ -f /usr/bin/zoxide ] && eval "$(zoxide init zsh)"
+export _ZO_ECHO=1
+
 export FPATH="$REPOS/eza/completions/zsh:$FPATH"
 
 # Pretty sure I have this for npm >> nvim mason 
@@ -236,7 +244,9 @@ PATH="$PATH:$HOME/.local/repos/sratoolkit.3.1.1-ubuntu64/bin"
 # env var aliases
 # source ~/.aws/scripts/profile
 
-# 2025-02-12 put this at EOF else slow launch?
+# 2025-02-12 put this at EOF else slow launch? 
+# (NC 2025-05-27) beginning or end doesn't seem to affect perceived startup
+# speed
 # To customize prompt, run `p10k configure` or edit $HOME/.p10k.zsh.
 
 if "$P10K"; then

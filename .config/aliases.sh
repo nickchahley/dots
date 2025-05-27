@@ -1,5 +1,6 @@
 # Aliases set using logic are moved to respective shell's aliases file
 # ex. ~/.config/zsh/aliases.sh, ~/.config/fish/aliases.fish
+[[ -f ~/.config/local.aliases.sh ]] && source ~/.config/local.aliases.sh
 
 alias resh='exec $SHELL'
 
