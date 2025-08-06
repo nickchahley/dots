@@ -82,6 +82,7 @@ alias git-lastci='git commit --edit -m"$(git log --format=%B --reverse HEAD..HEA
 alias git-sci='git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"'
 
 # fast git and default dvc init
+alias update-dvc='cp ~/data/dvc-bookmarks/config .dvc/config'
 alias git-dvc='git init && dvc init && cp ~/data/dvc-bookmarks/config .dvc/config'
 alias dvcinit='mkdir .dvc && cp ~/data/dvc-bookmarks/config .dvc/config'
 alias cpdvc='cp ~/data/dvc-bookmarks/config .dvc/config'

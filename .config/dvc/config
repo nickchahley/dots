@@ -5,10 +5,22 @@
     token = dsat_160Q3imSIAB95nFwkd3wLwcUGgh9AAvIGV8YxuB4qH5xhfCrt
     url = https://studio.iterative.ai
 
+['remote "gs"']
+    url = gs://dvc-simmunome
 
 ['remote "s3"']
     url = s3://dvc-simmunome-dev
     region = ca-central-1
+
+['remote "cache"']
+	url = ~/data/dvc-cache
+
+['remote "ext"']
+	url = "/media/nikoli/Backup Plus/simmunome/dvc-cache"
+
+['remote "ext2"']
+	url = "/mnt/bak"
+
 
 # (2025-02-24) while this SHOULD be efficient, it's causing headaches when
 # trying to change things (ex w/ dvc repro)

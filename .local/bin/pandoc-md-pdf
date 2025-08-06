@@ -1,8 +1,16 @@
 #!/usr/bin/env bash
 
+pandoc_opts="\
+	--variable colorlinks=true \
+	"
+
 show_help() {
 cat << EOF 
 Useage: $0 <inputs> [-o output]
+
+Convert markdown to pdf using pandoc. Default is file.md -> file.pdf
+pandoc_opts set to:
+$pandoc_opts
 EOF
 }
 
@@ -14,6 +22,7 @@ while getopts ho: opt; do
 			exit 0
 			;;
 		o)
+			# FIXME: this does not work
 			output=$OPTARG
 			;;
 		*)
@@ -37,9 +46,5 @@ elif (("$#" > 1 )); then
 	done
 	input="$list"
 fi
-
-pandoc_opts="\
-	--variable colorlinks=true \
-	"
 
 pandoc $pandoc_opts "$input" -o "$output"

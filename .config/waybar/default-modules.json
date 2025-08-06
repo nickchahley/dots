@@ -2,8 +2,17 @@
 {
 	"clock": {
 		// "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>", // makes error
+		// "format-alt": "{calendar}", // {calendar is cause of error}
+		"tooltip-format": "{:%A\n%d %B %Y\n%Hh%M}", 
 		"format": "{:%a %d-%b-%y %Hh%M}",
-		"format-alt": "{:%Y-%m-%d %Hh%M}",
+		"format-alt": "{:%Y-%m-%d %a %Hh%M}",
+	},
+	"custom/clock": {
+		"exec": "$HOME/.config/waybar/bin/custom-clock.sh",
+		"return-type": "json",
+		"interval": 60,
+		"format": "{default}",
+		"format-alt": "{alt}",
 	},
 	"battery": {
 		"format": "{capacity}% {icon}",

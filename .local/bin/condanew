@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
 PYTHON_VERSION=${2:-"3.11.5"}
-conda create --yes python==$PYTHON_VERSION pip --name "$1"
+TEST_BASE="_test"
+
+if [[ "$1" == "test" ]]; then
+	echo "cloning $TEST_BASE to $1"
+	conda create --yes --name "$1" --clone "$TEST_BASE"
+else
+	conda create --yes python==$PYTHON_VERSION pip --name "$1"
+fi

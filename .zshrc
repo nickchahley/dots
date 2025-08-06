@@ -120,6 +120,10 @@ fi
 # Use ripgrep for fzf
 [[ -n rg ]] && export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 
+export FZF_DEFAULT_OPTS="
+--bind 'ctrl-y:execute-silent(echo {+} | clip copy)'
+"
+
 # want to be able to fuzzy search file contents
 # using ripgrep combined with preview
 fif() {
@@ -252,3 +256,9 @@ PATH="$PATH:$HOME/.local/repos/sratoolkit.3.1.1-ubuntu64/bin"
 if "$P10K"; then
 	[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
 fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/nikoli/.local/repos/google-cloud-sdk/path.zsh.inc' ]; then . '/home/nikoli/.local/repos/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/nikoli/.local/repos/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/nikoli/.local/repos/google-cloud-sdk/completion.zsh.inc'; fi
