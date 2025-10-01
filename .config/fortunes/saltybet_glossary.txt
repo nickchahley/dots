@@ -1,0 +1,222 @@
+Welcome to the SaltyBet Glossary of Terms! If you are looking for the SaltyBet FAQ, head over to http://www.saltybet.com/about for more information about the site itself. To find what you're looking for, hit ctrl-F. 
+
+
+
+Glossary of SaltyBet chat terminology (WIP):
+
+12p/12th Palette: Typically (though not always) the strongest selectable color palette for a character. Characters' 12th palettes may include infinite supers, healing or stronger damage/defense. 
+
+2hu: Shortform/joke spelling of "Touhou", a series of doujin bullet hell games featuring many, many characters (almost entirely young girls) from which many MUGEN characters originate.
+
+A Tier: See - Tiers
+
+AI: Artificial Intelligence. In SaltyBet, strong AI indicates that the computer is "smart" when it comes to fights and generally "chooses" good actions as opposed to bad AI.
+
+Alan/Yuri/Clara: Characters who have chat commands (http://www.nightbot.tv/commands/saltybet) because their ingame counterparts memorably scream OOOOOOO, AAAAAAAAA and EEEEEEEEE respectively.
+
+Alive/Dead: Used when referring to dreams. The dream is alive when a character who is an extreme underdog is successful. The dream is dead when the underdog is defeated, especially if the match is close. 
+
+All-In: Betting all one's salt for maximum potential profit. Highly risky as it drops one to their absolute minimum upon failure.
+
+Always Bet On ____: Indicates that someone always bets on characters that have ___ trait in common. 
+
+Arcade: A place where SaltyBetters could input text commands for fighters in order to gain Salt. See http://www.saltybet.com/arcade
+
+Author: MUGEN character creator.
+
+Auto-balance: An old feature where fighters who were less favored to win received buffs for that fight to increase their chances of winning. Caused a lot of backlash.
+
+B Tier: See - Tiers
+
+Bailout: The bare minimum of money given to SaltyBetters who go all in and lose. Also the money given during a tournament, as the money accumulated during a tournament is added to the overall total for each person who participated.  
+
+Bot: an account designed to bet on every fight automatically, such as the upset bots who bet upset every time.
+
+Broken: A character/attack/anything that is overpowered to the point of unfairness. 
+
+Canadian: Antithesis of Mexi-, as Canada is in the opposite direction of Mexico from the United States. It usually means weak. See also: Potato. 
+
+Cancel: When a character performs an action that stops their previous animation/action. There is also a "Dream Cancel" which emerged from the game King of Fighters XI, which occasionally is used to describe a situation in SaltyBet where a character prevents a dream from being realized, especially in dramatic fashion. 
+
+Canon Fight: When 2 characters in Matchmaking or Tournament fight from within the same "universe" or canon (see http://en.wikipedia.org/wiki/Canon_(fiction) for more information on canon)
+
+Chip: Fighting game term, meaning when a character repeatedly does small amounts of damage (or "chipping away" at the health bar). 
+
+Clone: Characters who are copies of another character, either in design or skillset.
+
+Clutch: A character is able to pull off a victory despite very little health remaining.
+
+Coin Flip: A fight which can go either way and is basically a 50/50 shot. For instance a character who only attacks once with an instakill, or a mirror match. New tier fights can also be coin flips. 
+
+Darude - Sandstorm:  Sandstorm is a 1999 Trance song by Finnish Trance DJ Darude. Notable for being a very popular song at sporting events and clubs, however for a long time many people did not know what the song name was as the song has no lyrics. Appears occasionally in the playlist, much to the delight (or chagrin) of the chat.  For more information on the memetic connotation, visit http://knowyourmeme.com/memes/darudes-sandstorm ༼ つ ◕_◕ ༽つ DUDUDUDUDUDUDUDUDUDU <(◕_◕< )
+
+Data/Data Round: When a character performs poorly in the first round but proceeds to do very well in the following rounds. Basically, it's as if the character has learned what their opponent can do (as in downloaded their profile and data) and thus can retaliate and beat them with it. 
+
+DBZ: Dragonball Z, a very popular anime that is the source of many, many MUGEN characters. An in joke is that SaltyBetters should always/never/always never sometimes bet on, maybe. Many characters get the tag SSJ (Super Saiyajin) from DBZ. 
+
+Demotion: When a character moves down a tier after a series of losses. 
+
+Deny: When a character prevents their opponent from what appears to be a possible victory, especially in the case of an upset. 
+
+Disrespect: A character attacks his/her opponent before the round starts (and the betting period ends), thus not respecting them or the timer. Occasionally double disrespect happens (sometimes called a "preview"), or a character stops (called "sudden respect"), or a character actually reaches 0 HP during this time resulting in the betting period ending early.
+
+Donald: Any of the many clones of Ronald McDonald found in the game. 
+
+Download: See - Data
+
+Dream: When a character has the odds stacked against them, betting on them is considered a "dream". It's not exactly stated where the line between "Dream" and "Upset" is since it's highly arguable and arbitrary. See also: Upset
+
+Duane: https://www.youtube.com/watch?v=mGvdVXxFkY4
+
+El Presidente: The nickname of S-Tier character Radditz SSJ4, the Mexi President of Saltybet.
+
+Exhibitions: Game mode after each tourney where Illuminati can request fights with up to 2 characters per side of any characters available in the game. Lasts for 25 matches.
+
+Fake: The opposite of Real, or a character who appears to be similar to a well liked or strong character (many characters have clones), but pales in comparison. 
+
+Fight Money: Potential winnings lost from the wrong bet. 
+
+Free: A fight in which a victor is basically guaranteed from the start, thus anyone who bets on them earns a free win.
+
+GAY BONA: A mondegreen (http://en.wikipedia.org/wiki/Mondegreen) from the song "Let's Go Away" from the game Daytona USA. The lyric "DAYTOOOONAAAA" is pronounced in a way that sounds like the singer is saying "GAY BOONAAAAA".
+
+Grab: Fighting game term for an attack where a character deals damage by grabbing their opponent. Often followed up with a throwing action or occasionally a suplex/piledriver. 
+
+Health Bar: Self-Explanatory, the Red/Blue bars at the top of the screen.
+
+Hitbox: The area on a character's sprite where if an attack enters the character's hitbox, said character takes damage. Some characters have hitboxes smaller than their actual sprites, making them harder to hit. Sometimes referred to when a character has a very small hitbox. 
+
+Illuminati: See http://www.saltybet.com/illuminati for Illuminati features and benefits. The term is largely because the Illuminati have a number of advantages which allow them to better gauge fighters to make correct bets more often as well as the fact that they control a much larger sum of money due to this as well as higher bailouts. The most wealthy of the Illuminati are the ones who basically control the majority of the odds of each fight and thus the flow of money. In other words, they are the 1% who control the money (and even certain character stats) on SaltyBet. 
+
+Jazz Hands: A character who moves their hands very rapidly when in their idle animation. The most popular example is Alter Amiba. There is also "Fap Hands" in which a character is doing a masturbation gesture in their idle animation. 
+
+Job/Jobbing: Pro wrestling term for when a fighter loses a match, especially in a way that it feels on purpose, as though it was their "job" to lose and make their opponent look good. A jobber is one who does this, especially when they do it routinely. 
+
+Jojo: A character from the series "JoJo's Bizarre Adventure". Does not necessarily refer to one of the characters canonically named JoJo. Some songs from the 2012 animated series appear in the chat.
+
+K/k: One thousand. 20k = 20 thousand.
+
+Kappa: Type it in chat and see.
+
+Kung Fu Man/KFM: The only character who originally came with MUGEN. Today many variations exist. 
+
+Level: Each account on SaltyBet has a "level" which increases with more bets. The more a person bets, the higher the level and thus the higher their bailout.
+
+Let's Rock, Baby!: A line by Dante from Devil May Cry, quoted by the titular character from the game Bayonetta (this is the sound clip used in SaltyBet)
+
+Mahvel: Marvel Comics
+
+Matchmaking: Game mode after exhibitions in which character fights are determined by RNG (random number generator). Lasts for 100 matches.
+
+Melty Blood: Fighting game created by Type-Moon based on their popular visual novel, "Tsukihime". Many MUGEN characters are based on or ripped from Melty Blood
+
+Meter: The little blue bar under the green health bar. Characters can use some of it to activate their super attacks.
+
+Mexi-: Prefix for anything absurdly strong and unbalanced (Mexibeam = a beam attack that wipes out a ridiculous amount of health at once). Originates from many highly unbalanced MUGEN characters that were created by Latin Americans or ripped from Latin American versions of games, especially Mexico. 
+
+Mines: AKA The Salt Mines. The bottom of the Salty bet ladder, where people who have very little salt live. When one reaches a certain arbitrary amount of money (currently it's somewhere between 50k and 1mil, depends who you ask) after all the toiling to win enough, they are considered "out of the mines" and thus have enough money that they don't have to depend on risky bets or all -ins to gain several thousands in salt.
+
+Mistakes: What one makes when they bet (often a lot) on the wrong fighter.
+
+Misteaks/My Steaks/Steaks: Humorous misspelling of mistakes.
+
+Moonspeak: Internet name for the Japanese Language. Japanese letters/characters are referred to as the Moonrunes of Moonspeak.  
+
+MSPaint: A free graphics editing software that comes with all Windows computers, from which very crude drawings are often made and sometimes turned into SaltyBet characters (who are typically either really strong, or weak potatoes). Also used to describe characters made in the software or just terrible looking character models. 
+
+MUGEN/M.U.G.E.N: A 1999 Fighting Game Engine made originally for MS-DOS in which characters are created by the community. SaltyBet is "played" through MUGEN. For more information, see http://en.wikipedia.org/wiki/M.U.G.E.N 
+
+New Tier: Characters who have yet to be put into a tier. As MUGEN is constantly getting new characters due to its community, there are periods (often lengthy) in which characters who have not been tiered will fight one another in order to place them in tiers. Most characters engage in 10 fights and are placed in separate based on performance. Occurs during Matchmaking; Tournaments and Exhibitions remain the same.
+
+Obama/Thanks Obama/Terrorists Win: A round ends with the time running out before a character's health reaches zero. See also: http://knowyourmeme.com/memes/thanks-obama
+
+Odds: A ratio of the money invested in both fighters by betters, which determines the payout. For instance, odds for a fight beween Characters A and B of 7:1 indicate that for every 1$ bet on Character B, 7$ was bet on Character A, and thus betters on Character B will get 7 times the money they put in back (plus their original bet) if character B wins, and betters on Character A receive 1/7th of the money they bet (plus their original bet). 
+
+OHKO: Acronym for "One Hit Knock Out", also called "Instakill". 
+
+Overpowered: Anything with immense strength that leads to an obvious, significant advantage to the point of lacking game balance.
+
+P Tier: See - Tiers
+
+Palette: The color make up of the character's sprite. Each character has 13, from 0 to 12. Sometimes affect a character's fighting strength. See also: 12p/12th Palette
+
+Paper: A character with a particular sprite deliberately made to look like papercraft. Often deceptively strong and depicted to be cute/moe. 
+
+Pity Round: When a character with a clear advantage (2-0) loses a round, as though they felt bad for their opponent before sealing away victory.
+
+Playlist: Set of songs that play during the stream.
+
+Potato: An extremely weak character who has poor AI, weak damage, loses a lot and is usually not fun to watch.
+
+Potatomatch: Fight between multiple potatoes. 
+
+Promotion: When a Character moves up a tier after a series of wins. 
+
+Rare Akuma: A very strong X tier character often seen as a sort benchmark among X tiers, and one of the most requested characters during exhibitions. If a character is able to beat Rare Akuma, they are most likely to be especially broken.
+
+Real: 
+-1: A fight which is between two evenly matched characters that goes the distance and reaches final rounds for maximum hype. 
+-2: A legitimately good character.
+-3: Odds that are nearly even.
+
+Rekt: Wrecked. 
+
+Regen: The ability to heal damage.  
+
+Request: Illuminati members have the option of selecting fighters and their palettes during Exhibitions. See also: Exhibitions
+
+Runback: A rematch. Sometimes mis-used to describe a character waking up after 2 rounds and winning 3-2. 
+
+S Tier: See - Tiers
+
+Sad Claps: A particularly funny Cyclops clone. 
+
+Salt: SaltyBet money. Sometimes called SaltyBucks. Not real money. 
+
+Salty:
+-1: The creator of the site
+-2: The state of being agitated, mad, or furious. 
+
+SaltyBet: The stream and the site, where people can bet fake money on A.I. controlled characters in the game MUGEN (Or occasionally major fighting game tournament matches such as EVO). Its current incarnation originated back in late spring of 2013 as "Salty's Dream Cast Casino", named after Salty's favorite console, the Sega Dreamcast. 
+
+Sanic: Internet joke spelling of Sonic from Sonic The Hedgehog. On the site, it especially refers to weak/potato Sonic or other characters from the series. 
+
+Scam/Scamming: When a character either exits the screen, causes the other character to be unable to connect an attack, or otherwise becomes unhittable (and thus no longer take damage for the duration of the fight), and wins by timing the match out. http://i.imgur.com/FhsxyfM.gif
+
+Scam Vader: An A Tier Darth Vader who spends the majority of his fights blowing up Alderaan offscreen instead of being onscreen fighting.
+
+Self-Scam: When an attempt at scamming backfires on account of the scammer having less health, causing them to lose. 
+
+SNK: Company now known as SNK Playmore. Developer of Metal Slug and King of Fighters and a number of other games. Known for having stupidly hard bosses that basically can cheat or break the game mechanics in their fighting games. The games are easy to rip from and thus many MUGEN characters are based on SNK (especially KoF)characters. 
+
+Sonicmega: A guy who covers a number of well known songs from video games, anime, or pop culture with rewritten lyrics themed towards SaltyBet. https://soundcloud.com/anime_sonicmega TIME TO MUTE
+
+Sleep: Something that weak people do in order to gain energy for the next day. 
+
+Stats Bet: When an illuminati bets based on who has the better stats, which typically but not always indicate general strength. Can also lead to a trap. 
+
+Supers: A character's strongest attack(s). Usually use meter. For the OP supers, see also: Mexi-/Mexibeam.
+
+Tiers: Large groupings of characters based on general strength in the game. Characters will only fight characters within their tier during matchmaking in order to limit lopsided fights, though characters of any tier can be chosen for exhibitions. 
+-X Tier: The strongest, most broken characters of SaltyBet. These are characters with extremely powerful attacks or combos, mexibeams, stupidly high defense or regen, AI breakers, Game Breakers, or other things that make the characters extremely unbalanced. These characters often have very high winrates.
+-S Tier: Very strong characters that are not quite broken (usually), with the occasional X-Tier demote. Usually have high winrates.
+-A Tier: Fairly average to decently strong characters, generally with middle-of-the-road stats, strengths and weaknesses, although this tier is fairly diverse. 
+-B Tier: The weakest of the main tiers. Though there are occasionally solid fighters, the majority of B tier is too weak to reach A-tier, but not quite as awful as P Tier. P Tier characters can be promoted to B Tier if they are bought out of P Tier.
+-P Tier: Also known as Potato tier. Consists of the worst characters in SaltyBet, such as characters who attack for very small amounts of damage, characters who rarely if ever attack, characters with extremely poor AI values, joke characters (such as Common Akuma who rapidly hurts himself to death) and other characters who are just painful to watch. P Tier since been blocked from matchmaking and thus P tier characters only appear in Exhibition matches unless bought out. 
+-New Tier: See - New Tier
+
+Tits: Usually used to refer to large-breasted or skimpy dressed females, which supposedly win more often.
+
+Tournament/Tourney: A game type after matchmaking in which 16 characters from one tier fight through a series of single-elimination matches. The final 2 characters engage in a best-of-9 instead of a best-of-3 or best-of-5 match. Tournament winning characters usually get promoted. Betters start off with 1000 Salt more than their regular bailout and try to get the most salt from the tournament matches, with the winner getting a bonus. Everyone gets the money they make in a tournament added to their total. Lasts for 15 matches. 
+
+Trap:
+-1: A character who is canonically male but is easily mistaken for an attractive or cute female. For instance; Bridget from Guilty Gear; Poison from Final Fight (early US releases).
+-2: A match in which the character who most obviously looks like a shoe-in to win a match is actually much less likely to win. Happens much more in exhibitions, where certain characters who have special properties that not everyone knows about are selected in fights in order to trick betters. For instance, requesting a 3% winrate P-tier who cannot be grabbed vs 75% winrate S-Tier Killer Whale (who can only attack by grabbing). Though Killer Whale is the clear favorite, he cannot damage his opponent and thus cannot win. 
+
+Ultraman: 1960s Japanese Tokusatsu (Basically kind of like Power Rangers/Super Sentai or Kamen Rider, look those up if you don't know what those are) series that popularized the genre. A number of MUGEN Ultramans exist and can be found on stream. See also: http://en.wikipedia.org/wiki/Ultra_Series
+
+Upset: A match in which a character with the odds against them wins. If the upset is through big odds, it is called a "Dream".
+
+Waifu: http://knowyourmeme.com/memes/waifu
+
+X-Tier: See - Tiers
