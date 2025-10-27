@@ -33,6 +33,8 @@
 	lo       = log --oneline
 	loh      = log --oneline -n10
 	lp       = log --patch       # Show file changes along with log
+	rp       = rev-parse --short
+	rph      = rev-parse --short HEAD
 	staash   = stash --all
 	fpr      = fetch origin +refs/pull/*:refs/remotes/origin/pull/*
 

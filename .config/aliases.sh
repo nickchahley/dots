@@ -260,6 +260,8 @@ alias xm4-on='bluetoothctl connect F8:4E:17:4D:07:77'
 alias xm4-off='bluetoothctl disconnect F8:4E:17:4D:07:77'
 alias xmfn='xm4-on'
 alias xmff='xm4-off'
+alias qkon='bluetoothctl connect 98:8E:79:01:17:57'
+alias qkoff='bluetoothctl disconnect 98:8E:79:01:17:57'
 alias corne-init='bluetoothctl pair C6:C7:CE:8D:6C:C3 && bluetoothctl trust C6:C7:CE:8D:6C:C3 && bluetoothctl connect C6:C7:CE:8D:6C:C3'
 
 alias dkr='docker kill rev-proxy-service'

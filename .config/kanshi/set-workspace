@@ -1,21 +1,53 @@
 #!/bin/bash
 # calling this from kanshi config DOES NOT WORK 2024-12-23
-ext_src={1:-"DP-1"}
 
-swaymsg workspace 1 output "eDP-1"
-swaymsg workspace 2 output "eDP-1"
-swaymsg workspace 3 output "eDP-1"
-swaymsg workspace 4 output "eDP-1"
-swaymsg workspace 5 output "eDP-1"
+laptop_spaces=(1 2 3 4 5)
+ext_spaces=(6 7 8 9 10 11 12 13)
+laptop_src="eDP-1"
+default_ext_src="DP-1"
 
-swaymsg workspace 6 output  "$ext_src"
-swaymsg workspace 7 output  "$ext_src"
-swaymsg workspace 8 output  "$ext_src"
-swaymsg workspace 9 output  "$ext_src"
-swaymsg workspace 10 output "$ext_src"
-swaymsg workspace 11 output "$ext_src"
-swaymsg workspace 12 output "$ext_src"
-swaymsg workspace 13 output "$ext_src"
+set_workspace(){
+	swaymsg workspace "$1" output "$2"
+}
 
-swaymsg workspace 1
-swaymsg workspace 6
+main(){
+	ext_src=${1:-"$default_ext_src"}
+
+	echo "Setting $laptop_src workspaces: ${laptop_spaces[@]}"
+	echo "Setting $ext_src workspaces: ${ext_spaces[@]}"
+
+	for i in ${laptop_spaces[@]}; do
+		set_workspace "$i" "$laptop_src" 
+	done
+
+	for i in ${ext_spaces[@]}; do
+		set_workspace "$i" "$ext_src" 
+	done
+
+	swaymsg workspace ${laptop_spaces[0]}
+	swaymsg workspace ${ext_spaces[0]}
+}
+
+script_args=()
+while [ $OPTIND -le "$#" ]; do
+	if getopts le: opt; then
+		case $opt in
+			# ex. -e "6 9 10"
+			e) 
+				set -f   # turn off filename expansion
+				ext_spaces=($OPTARG)   # variable is unquoted
+				set +f    # turn it back on
+				;;        
+			l) 
+				set -f   
+				laptop_spaces=($OPTARG) 
+				set +f    
+				;;        
+		esac
+	else
+			script_args+=("${!OPTIND}")
+			((OPTIND++))
+	fi
+done
+
+main "${script_args[@]}"
