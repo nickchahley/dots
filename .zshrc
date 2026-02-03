@@ -163,7 +163,7 @@ alias rgf='rga-fzf'
 # Line Editor
 # Define a custom zle widget to allow editing command in external editor
 # FIXME: does not work inside of tmux
-EDITOR=nvim
+export EDITOR=nvim
 function edit-command-line-inplace() {
   if [[ $CONTEXT != start ]]; then
     if (( ! ${+widgets[edit-command-line]} )); then
@@ -175,7 +175,7 @@ function edit-command-line-inplace() {
   fi
   () {
     emulate -L zsh -o nomultibyte
-    local editor=("${(@Q)${(z)${VISUAL:-${EDITOR:-vi}}}}") 
+    local editor=("${(@Q)${(z)${VISUAL:-${EDITOR:-vim}}}}") 
     case $editor in
       (*vim*)
         "${(@)editor}" -c "normal! $(($#LBUFFER + 1))go" -- $1
@@ -241,12 +241,6 @@ export NVM_DIR="$HOME/.config/nvm"
 PATH="$PATH:$HOME/.local/repos/sratoolkit.3.1.1-ubuntu64/bin"
 
 [ -s "/home/nikoli/.scm_breeze/scm_breeze.sh" ] && source "/home/nikoli/.scm_breeze/scm_breeze.sh"
-
-# autoload -U +X bashcompinit && bashcompinit
-# complete -o nospace -C /usr/bin/terraform terraform
-
-# env var aliases
-# source ~/.aws/scripts/profile
 
 # 2025-02-12 put this at EOF else slow launch? 
 # (NC 2025-05-27) beginning or end doesn't seem to affect perceived startup

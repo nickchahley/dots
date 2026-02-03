@@ -8,7 +8,7 @@ export PROFILE_SOURCED=1
 # I just want to be able to have one place to sort out my PATH and still be able
 # to use multiple shells
 
-export EDITOR=/usr/bin/nvim
+export EDITOR=nvim
 
 # Keyboard layout (X servers)
 # setxkbmap -layout us -variant colemak -option "caps:escape"

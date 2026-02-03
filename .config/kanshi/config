@@ -26,6 +26,30 @@ profile work-dell {
 	exec swaymsg workspace 6
 }
 
+profile work-dell-home {
+	# Wait, does this (setting output to name of output instead of port) work?
+	output "eDP-1" position 0,0
+	output "Dell Inc. DELL U2415 CFV9N6B21Y5S" position 1920,0 mode 1920x1200
+
+	exec swaymsg workspace 1 output "eDP-1"
+	exec swaymsg workspace 2 output "eDP-1"
+	exec swaymsg workspace 3 output "eDP-1"
+	exec swaymsg workspace 4 output "eDP-1"
+	exec swaymsg workspace 5 output "eDP-1"
+
+	exec swaymsg workspace 6 output  "Dell Inc. DELL U2415 CFV9N6B21Y5S"
+	exec swaymsg workspace 7 output  "Dell Inc. DELL U2415 CFV9N6B21Y5S"
+	exec swaymsg workspace 8 output  "Dell Inc. DELL U2415 CFV9N6B21Y5S"
+	exec swaymsg workspace 9 output  "Dell Inc. DELL U2415 CFV9N6B21Y5S"
+	exec swaymsg workspace 10 output "Dell Inc. DELL U2415 CFV9N6B21Y5S"
+	exec swaymsg workspace 11 output "Dell Inc. DELL U2415 CFV9N6B21Y5S"
+	exec swaymsg workspace 12 output "Dell Inc. DELL U2415 CFV9N6B21Y5S"
+	exec swaymsg workspace 13 output "Dell Inc. DELL U2415 CFV9N6B21Y5S"
+
+	exec swaymsg workspace 1
+	exec swaymsg workspace 6
+}
+
 profile theater {
 	# projector into usb-c port 1 @Exists
 	output "eDP-1" position 0,1080	

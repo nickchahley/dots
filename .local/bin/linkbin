@@ -10,10 +10,18 @@
 # 	allow overwrite if exists
 # 	read link source if exists
 
+dstdir="$HOME/.local/bin"
+
+if [[ ($# == 0 ) || ( $@ == "--help" ) || ( $@ == "-h" ) ]]; then
+	echo "Useage: $(basename $0) <path>"
+	echo "symlink path to $dstdir"
+	exit 1
+fi
+
 src=$(realpath "$1")
 filename=$(basename "$1")
 linkname="${filename%.*}"
-target="$HOME/.local/bin/$linkname"
+target="$dstdir/$linkname"
 
 # "\033[<ANSI_escape_code>m",  use with 'echo -e' 
 red="\033[0;31m"

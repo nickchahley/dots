@@ -7,4 +7,5 @@ if [[ "$1" == "test" ]]; then
 	conda create --yes --name "$1" --clone "$TEST_BASE"
 else
 	conda create --yes python==$PYTHON_VERSION pip --name "$1"
+	conda run --no-capture-output -n "$1" pip install pytest
 fi

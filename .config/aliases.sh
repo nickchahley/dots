@@ -186,6 +186,7 @@ alias sm='swaymsg'
 alias smo="swayouts"
 alias kr="kanshi-reload && swaymsg -p -t get_outputs | grep 'Output\|Current\|Position'"
 alias kancon="vim ~/.config/kanshi/config && kanshi-reload"
+alias ksw="kanshi-set-workspace"
 alias dp1up='swaymsg output "eDP-1" position 0 1080 && swaymsg output "DP-1" position 0 0 mode 1920x1080'
 alias sshcon="vim ~/.ssh/config"
 
@@ -214,6 +215,7 @@ alias es='nvim ~/.config/sway/config'
 alias esc='vim ~/.config/sway/compatible.config'
 alias eal='nvim ~/.config/alacritty/alacritty.yml'
 alias ftl='/home/nikoli/.steam/debian-installation/steamapps/common/FTL Faster Than Light/FTL'
+alias lbin='~/.local/bin'
 
 # want to have these also cd into the current file dir
 # cd %:p:h:pwd
@@ -252,18 +254,6 @@ alias cel='conda env list'
 alias co='conda'
 alias crm='conda remove --yes --all -n'
 
-# Bluetooth
-alias blue='bluetoothctl'
-alias xm5-on='bluetoothctl connect 88:C9:E8:4A:03:97'
-alias xm5-off='bluetoothctl disconnect 88:C9:E8:4A:03:97'
-alias xm4-on='bluetoothctl connect F8:4E:17:4D:07:77'
-alias xm4-off='bluetoothctl disconnect F8:4E:17:4D:07:77'
-alias xmfn='xm4-on'
-alias xmff='xm4-off'
-alias qkon='bluetoothctl connect 98:8E:79:01:17:57'
-alias qkoff='bluetoothctl disconnect 98:8E:79:01:17:57'
-alias corne-init='bluetoothctl pair C6:C7:CE:8D:6C:C3 && bluetoothctl trust C6:C7:CE:8D:6C:C3 && bluetoothctl connect C6:C7:CE:8D:6C:C3'
-
 alias dkr='docker kill rev-proxy-service'
 alias csvl='csvlook'
 alias csvc='csvcut'
@@ -292,5 +282,18 @@ alias ports="sudo lsof -i -P -n"
 alias kp="~/projects/00011-saas-proxy/rev-proxy-dev/scripts/kill_on_ports.sh"
 alias rplp="~/projects/00011-saas-proxy/rev-proxy-dev/scripts/kill_on_ports.sh && ~/projects/00011-saas-proxy/rev-proxy-dev/scripts/launch_preamble.sh"
 alias kdpr="sudo fuser -k 5000/tcp"
+
+
+# Bluetooth
+# vars seem tidier than bluetooth aliases
+# ex. bluetoothctl connect $q5k
+export qudelix="98:8E:79:01:17:57"
+export swoop="D8:A2:33:AD:5D:9A"
+export corne="C6:C7:CE:8D:6C:C3"
+export xm4="F8:4E:17:4D:07:77"
+alias blue='bluetoothctl'
+alias blc='bluetoothctl connect'
+alias bld='bluetoothctl disconnect'
+alias corne-init='bluetoothctl pair C6:C7:CE:8D:6C:C3 && bluetoothctl trust C6:C7:CE:8D:6C:C3 && bluetoothctl connect C6:C7:CE:8D:6C:C3'
 
 # vim: ft=bash: ts=2: sw=2: set nowrap:
