@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+# open the executable "$1" with $EDITOR
+$EDITOR "$(which $1)"

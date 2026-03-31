@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
+NAME=$1
 PYTHON_VERSION=${2:-"3.11.5"}
 TEST_BASE="_test"
 
-if [[ "$1" == "test" ]]; then
-	echo "cloning $TEST_BASE to $1"
-	conda create --yes --name "$1" --clone "$TEST_BASE"
+if [[ "$NAME" == "test" ]]; then
+	echo "cloning $TEST_BASE to $NAME"
+	conda create --yes --name "$NAME" --clone "$TEST_BASE"
 else
-	conda create --yes python==$PYTHON_VERSION pip --name "$1"
-	conda run --no-capture-output -n "$1" pip install pytest
+	conda create --yes python==$PYTHON_VERSION pip --name "$NAME"
+	conda run --no-capture-output -n "$NAME" pip install pytest
 fi
