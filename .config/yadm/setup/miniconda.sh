@@ -7,6 +7,6 @@ bash "$CONDA_INSTALL"/miniconda.sh -b -u -p "$CONDA_INSTALL"
 rm -rf "$CONDA_INSTALL"/miniconda.sh
 
 # "$CONDA_INSTALL/bin/conda" update conda
-"$CONDA_INSTALL/bin/conda" install python pip
+yes | "$CONDA_INSTALL/bin/conda" install python pip
 "$CONDA_INSTALL/bin/conda" init
 
