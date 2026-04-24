@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+import polars as pl
+from pathlib import Path
+import typer
+app = typer.Typer()
+
+def scan_file_rows(file):
+    return (
+        pl.scan_csv(file)
+        .select(pl.len()).collect(engine='streaming') # less memory
+        .item()
+    )
+
+@app.command()
+def count_file_rows(files:list[str]):
+    d = [
+        {
+        'name': str(Path(x).name),
+        'rows': scan_file_rows(x),
+        'path': str(x),
+        }
+        for x in files
+    ]
+    print(pl.DataFrame(d))
+
+if __name__ == "__main__":
+    app()
